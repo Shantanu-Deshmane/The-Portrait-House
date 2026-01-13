@@ -95,72 +95,9 @@
 
 <body
   class="bg-background-light dark:bg-background-dark text-stone-900 dark:text-stone-100 font-sans transition-colors duration-300">
-  <nav
-    class="fixed top-0 w-full z-50 bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-stone-200 dark:border-stone-800">
-    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-      <a href="index.html" class="flex items-center">
-        <img alt="The Portrait House Logo" class="h-12 w-auto invert dark:invert-0" src="images/logo.png" width="938"
-          height="1001" />
-      </a>
-      <div class="hidden md:flex space-x-10 text-xs tracking-[0.2em] uppercase font-medium">
-        <a class="hover:text-primary transition-colors" href="index.html">Home</a>
-        <a class="hover:text-primary transition-colors" href="Gallery.html">Gallery</a>
-        <a class="hover:text-primary transition-colors" href="AboutUs.html">About Us</a>
-        <a class="hover:text-primary transition-colors" href="ContactUs.html">Contact</a>
-      </div>
-      <div class="flex items-center space-x-4">
-        <button class="p-2 rounded-full hover:bg-stone-100 dark:hover:bg-stone-900 transition-colors" id="mode-toggle">
-          <span class="material-icons-outlined text-xl">dark_mode</span>
-        </button>
-        <button class="md:hidden p-2 text-stone-800 dark:text-stone-200" id="mobile-menu-btn">
-          <span class="material-icons-outlined text-2xl">menu</span>
-        </button>
-        <a class="hidden md:block border border-stone-800 dark:border-stone-200 px-6 py-2 text-[10px] tracking-[0.2em] uppercase hover:bg-stone-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-all"
-          href="ContactUs.html">
-          Book a Session
-        </a>
-      </div>
-    </div>
+  <div data-include="header"></div>
 
-  </nav>
-
-  <!-- Mobile Menu Overlay -->
-  <div id="mobile-menu"
-    class="fixed inset-0 h-screen w-screen bg-white/90 dark:bg-black/95 backdrop-blur-xl z-[100] translate-x-full transition-transform duration-500 md:hidden mobile-nav-watermark overflow-hidden">
-    <div class="p-6 flex justify-between items-center border-b border-stone-200/50 dark:border-stone-800/50">
-      <a href="index.html">
-        <img alt="The Portrait House Logo" class="h-8 w-auto invert dark:invert-0" src="images/logo.png" />
-      </a>
-      <button id="close-menu-btn" class="p-2 text-stone-800 dark:text-stone-200">
-        <span class="material-icons-outlined text-3xl">close</span>
-      </button>
-    </div>
-    <div
-      class="flex flex-col items-center justify-center space-y-10 h-[75vh] text-lg tracking-[0.4em] uppercase font-light">
-      <a class="hover:text-gold transition-colors mobile-link relative group" href="index.html">
-        Home
-        <span
-          class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-px bg-gold transition-all group-hover:w-full"></span>
-      </a>
-      <a class="hover:text-gold transition-colors mobile-link relative group" href="Gallery.html">
-        Gallery
-        <span
-          class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-px bg-gold transition-all group-hover:w-full"></span>
-      </a>
-      <a class="hover:text-gold transition-colors mobile-link relative group" href="AboutUs.html">
-        About Us
-        <span
-          class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-px bg-gold transition-all group-hover:w-full"></span>
-      </a>
-      <a class="hover:text-gold transition-colors mobile-link relative group" href="ContactUs.html">
-        Contact
-        <span
-          class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-px bg-gold transition-all group-hover:w-full"></span>
-      </a>
-      <a class="mt-12 border border-stone-800/30 dark:border-stone-200/30 px-12 py-5 text-xs tracking-[0.3em] uppercase hover:bg-stone-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-all"
-        href="ContactUs.html">Book a Session</a>
-    </div>
-  </div>
+  <div data-include="mobile-menu"></div>
   <section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
     <img alt="Luxury B&amp;W Portrait" class="absolute inset-0 w-full h-full object-cover grayscale brightness-75"
       src="images/img1.webp" decoding="async" width="4000" height="6000" />

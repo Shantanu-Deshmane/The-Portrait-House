@@ -1,11 +1,80 @@
+// Component Injection
+async function injectComponents() {
+    const components = document.querySelectorAll('[data-include]');
+    const promises = Array.from(components).map(async (el) => {
+        const componentName = el.getAttribute('data-include');
+        try {
+            console.log(`Fetching component: ${componentName}`);
+            const response = await fetch(`components/${componentName}.html`);
+            if (response.ok) {
+                const html = await response.text();
+                el.innerHTML = html;
+                el.removeAttribute('data-include');
+                console.log(`Successfully injected ${componentName}`);
+            } else {
+                console.error(`Failed to load component ${componentName}: ${response.status} ${response.statusText}`);
+                if (window.location.protocol === 'file:') {
+                    el.innerHTML = `<div style="padding: 20px; text-align: center; background: #fee2e2; color: #991b1b; border: 1px solid #f87171; border-radius: 8px; margin: 10px;">
+                        <strong>CORS Error:</strong> Browsers block 'fetch' for local files. 
+                        <br>Please run <code>npm run dev</code> to view the header/footer.
+                    </div>`;
+                }
+            }
+        } catch (e) {
+            console.error(`Error loading component ${componentName}:`, e);
+            if (window.location.protocol === 'file:') {
+                el.innerHTML = `<div style="padding: 20px; text-align: center; background: #fee2e2; color: #991b1b; border: 1px solid #f87171; border-radius: 8px; margin: 10px;">
+                        <strong>Loading Error:</strong> ${e.message}
+                        <br>This usually happens when opening files directly (file://). 
+                        <br>Please run <code>npm run dev</code> in your terminal.
+                    </div>`;
+            }
+        }
+    });
+
+    await Promise.all(promises);
+
+    // Once components are injected, re-initialize their specific features
+    initTheme();
+    initMobileMenu();
+    updateActiveLinks();
+    updateYear();
+}
+
+function updateActiveLinks() {
+    const currentPage = window.location.pathname.split('/').pop().split('.')[0] || 'index';
+    const links = document.querySelectorAll('.nav-links a, .mobile-nav-links a');
+    links.forEach(link => {
+        if (link.getAttribute('data-page') === currentPage) {
+            link.classList.add('text-primary');
+            // Mobile specific active state
+            const underline = link.querySelector('span');
+            if (underline) underline.classList.add('w-full');
+        }
+    });
+}
+
+function updateYear() {
+    const yearEls = document.querySelectorAll('.current-year');
+    yearEls.forEach(el => el.textContent = new Date().getFullYear());
+}
+
 // Theme Management
 function initTheme() {
     // Core theme class application is handled by head script to prevent FOUC.
     // Here we just ensure the icons are updated correctly on load.
     updateThemeIcon();
 
-    // Toggle listener for specific ID if it exists
-    document.getElementById('mode-toggle')?.addEventListener('click', toggleTheme);
+    // Toggle listener - attach to all possible toggle buttons
+    const toggleButtons = document.querySelectorAll('#mode-toggle, .theme-toggle-btn');
+    toggleButtons.forEach(btn => {
+        // Remove old listener if any and add new one
+        btn.onclick = null;
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            toggleTheme();
+        });
+    });
 }
 
 function toggleTheme() {
@@ -136,7 +205,10 @@ function initMobileMenu() {
         }
     };
 
-    mobileMenuBtn.addEventListener('click', () => toggleMenu(true));
+    mobileMenuBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        toggleMenu(true);
+    });
     closeMenuBtn?.addEventListener('click', () => toggleMenu(false));
     mobileLinks.forEach(link => {
         link.addEventListener('click', () => toggleMenu(false));
@@ -157,12 +229,15 @@ function initLazyImages() {
 }
 
 // Initialize everything
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+    // 1. Inject components first
+    await injectComponents();
+
+    // 2. Initialize UI features
     try {
-        initTheme();
         initLazyImages();
     } catch (e) {
-        console.error("Error initializing theme:", e);
+        console.error("Error initializing lazy images:", e);
     }
 
     try {
@@ -171,26 +246,6 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error("Error initializing gallery:", e);
     }
 
-    try {
-        initMobileMenu();
-    } catch (e) {
-        console.error("Error initializing mobile menu:", e);
-    }
-
     handleWhatsAppSubmit('contact-form');
     handleWhatsAppSubmit('full-contact-form');
-
-    // Attach theme toggle to all buttons with relevant class or inline handlers
-    // This is a safety measure to catch any buttons across different pages
-    const toggleButtons = document.querySelectorAll('#mode-toggle, .theme-toggle-btn, [onclick*="classList.toggle(\'dark\')"]');
-    toggleButtons.forEach(btn => {
-        if (!btn.classList.contains('theme-toggle-btn')) {
-            btn.classList.add('theme-toggle-btn');
-        }
-        btn.removeAttribute('onclick');
-        // Avoid adding multiple listeners if already added in initTheme
-        if (btn.id !== 'mode-toggle') {
-            btn.addEventListener('click', toggleTheme);
-        }
-    });
 });

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://theportraithouse.com/sitemap.xml

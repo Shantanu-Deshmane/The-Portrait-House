@@ -5,6 +5,7 @@
   "main": "main.js",
   "scripts": {
     "build": "npx tailwindcss -i ./styles.css -o ./output.css",
+    "dev": "npx serve .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

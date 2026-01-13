@@ -55,68 +55,9 @@
 
 <body
     class="bg-background-light dark:bg-background-dark text-stone-900 dark:text-stone-100 antialiased overflow-x-hidden">
-    <nav
-        class="fixed top-0 w-full z-50 px-8 py-6 flex justify-between items-center bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-stone-200 dark:border-stone-800">
-        <a href="index.html" class="flex items-center gap-4">
-            <img alt="The Portrait House Logo" class="h-12 w-auto invert dark:invert-0" src="images/logo.png"
-                width="938" height="1001" />
-        </a>
-        <div class="hidden md:flex gap-12 text-sm uppercase tracking-[0.2em] font-medium">
-            <a class="hover:text-primary transition-colors" href="index.html">Home</a>
-            <a class="hover:text-primary transition-colors" href="Gallery.html">Gallery</a>
-            <a class="hover:text-primary transition-colors text-primary" href="AboutUs.html">About Us</a>
-            <a class="hover:text-primary transition-colors" href="ContactUs.html">Contact</a>
-        </div>
-        <div class="flex items-center gap-8">
-            <a class="hidden md:block text-sm border-b border-stone-900 dark:border-stone-100 pb-1 tracking-widest hover:text-primary transition-all"
-                href="ContactUs.html">Inquiry</a>
-            <button class="p-2 rounded-full hover:bg-stone-100 dark:hover:bg-stone-900 transition-colors"
-                id="mode-toggle">
-                <span class="material-icons-outlined text-xl">dark_mode</span>
-            </button>
-            <button class="md:hidden p-2 text-stone-800 dark:text-stone-200" id="mobile-menu-btn">
-                <span class="material-icons-outlined text-2xl">menu</span>
-            </button>
-        </div>
-    </nav>
+    <div data-include="header"></div>
 
-    <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu"
-        class="fixed inset-0 h-screen w-screen bg-white/90 dark:bg-black/95 backdrop-blur-xl z-[100] translate-x-full transition-transform duration-500 md:hidden mobile-nav-watermark overflow-hidden">
-        <div class="p-6 flex justify-between items-center border-b border-stone-200/50 dark:border-stone-800/50">
-            <a href="index.html">
-                <img alt="The Portrait House Logo" class="h-8 w-auto invert dark:invert-0" src="images/logo.png" />
-            </a>
-            <button id="close-menu-btn" class="p-2 text-stone-800 dark:text-stone-200">
-                <span class="material-icons-outlined text-3xl">close</span>
-            </button>
-        </div>
-        <div
-            class="flex flex-col items-center justify-center space-y-10 h-[75vh] text-lg tracking-[0.4em] uppercase font-light">
-            <a class="hover:text-gold transition-colors mobile-link relative group" href="index.html">
-                Home
-                <span
-                    class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-px bg-gold transition-all group-hover:w-full"></span>
-            </a>
-            <a class="hover:text-gold transition-colors mobile-link relative group" href="Gallery.html">
-                Gallery
-                <span
-                    class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-px bg-gold transition-all group-hover:w-full"></span>
-            </a>
-            <a class="hover:text-gold transition-colors mobile-link relative group" href="AboutUs.html">
-                About Us
-                <span
-                    class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-px bg-gold transition-all group-hover:w-full"></span>
-            </a>
-            <a class="hover:text-gold transition-colors mobile-link relative group" href="ContactUs.html">
-                Contact
-                <span
-                    class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-px bg-gold transition-all group-hover:w-full"></span>
-            </a>
-            <a class="mt-12 border border-stone-800/30 dark:border-stone-200/30 px-12 py-5 text-xs tracking-[0.3em] uppercase hover:bg-stone-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-all"
-                href="ContactUs.html">Book a Session</a>
-        </div>
-    </div>
+    <div data-include="mobile-menu"></div>
     <header class="pt-40 pb-20 px-8 md:px-24 max-w-7xl mx-auto">
         <div class="grid md:grid-cols-12 gap-12 items-end">
             <div class="md:col-span-7">
@@ -235,27 +176,7 @@
         </div>
     </section>
 
-    <footer class="py-20 border-t border-stone-200 dark:border-stone-800 px-8 md:px-24">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
-            <div class="flex flex-col items-center md:items-start gap-3">
-                <a href="index.html" class="flex-shrink-0">
-                    <img alt="The Portrait House Footer Logo" class="h-10 w-auto invert dark:invert-0"
-                        src="images/logo.png" width="938" height="1001" />
-                </a>
-                <div class="space-y-1 text-[10px] tracking-widest text-stone-400 uppercase">
-                    <p>© 2026 The Portrait House. All Rights Reserved.</p>
-                    <p class="opacity-70">Developed by ChaarTech Technologies Pvt. Ltd</p>
-                    <p class="text-stone-500 pt-2">EST. 2012 — KARAD, MAHARASHTRA</p>
-                </div>
-            </div>
-            <div class="flex gap-12 text-xs uppercase tracking-widest text-stone-500">
-                <a href="https://www.instagram.com/p/DTdOQCdiO8t/?igsh=MWRlemRrNDN2bm9kdw=="
-                    class="hover:text-primary transition-colors">Instagram</a>
-                <a href="#" class="hover:text-primary transition-colors">Pinterest</a>
-                <a href="#" class="hover:text-primary transition-colors">Vogue Portfolio</a>
-            </div>
-        </div>
-    </footer>
+    <div data-include="footer"></div>
 </body>
 
 </html>
