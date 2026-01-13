@@ -1,46 +1,4 @@
-// Component Injection
-async function injectComponents() {
-    const components = document.querySelectorAll('[data-include]');
-    const promises = Array.from(components).map(async (el) => {
-        const componentName = el.getAttribute('data-include');
-        try {
-            console.log(`Fetching component: ${componentName}`);
-            const response = await fetch(`components/${componentName}.html`);
-            if (response.ok) {
-                const html = await response.text();
-                el.innerHTML = html;
-                el.removeAttribute('data-include');
-                console.log(`Successfully injected ${componentName}`);
-            } else {
-                console.error(`Failed to load component ${componentName}: ${response.status} ${response.statusText}`);
-                if (window.location.protocol === 'file:') {
-                    el.innerHTML = `<div style="padding: 20px; text-align: center; background: #fee2e2; color: #991b1b; border: 1px solid #f87171; border-radius: 8px; margin: 10px;">
-                        <strong>CORS Error:</strong> Browsers block 'fetch' for local files. 
-                        <br>Please run <code>npm run dev</code> to view the header/footer.
-                    </div>`;
-                }
-            }
-        } catch (e) {
-            console.error(`Error loading component ${componentName}:`, e);
-            if (window.location.protocol === 'file:') {
-                el.innerHTML = `<div style="padding: 20px; text-align: center; background: #fee2e2; color: #991b1b; border: 1px solid #f87171; border-radius: 8px; margin: 10px;">
-                        <strong>Loading Error:</strong> ${e.message}
-                        <br>This usually happens when opening files directly (file://). 
-                        <br>Please run <code>npm run dev</code> in your terminal.
-                    </div>`;
-            }
-        }
-    });
-
-    await Promise.all(promises);
-
-    // Once components are injected, re-initialize their specific features
-    initTheme();
-    initMobileMenu();
-    updateActiveLinks();
-    updateYear();
-}
-
+// Navigation Active State
 function updateActiveLinks() {
     const currentPage = window.location.pathname.split('/').pop().split('.')[0] || 'index';
     const links = document.querySelectorAll('.nav-links a, .mobile-nav-links a');
@@ -229,11 +187,13 @@ function initLazyImages() {
 }
 
 // Initialize everything
-document.addEventListener('DOMContentLoaded', async () => {
-    // 1. Inject components first
-    await injectComponents();
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Initialize UI features directly
+    initTheme();
+    initMobileMenu();
+    updateActiveLinks();
+    updateYear();
 
-    // 2. Initialize UI features
     try {
         initLazyImages();
     } catch (e) {

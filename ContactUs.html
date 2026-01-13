@@ -54,9 +54,77 @@
 
 <body
     class="bg-background-light dark:bg-background-dark text-gray-800 dark:text-gray-200 font-sans transition-colors duration-300">
-    <div data-include="header"></div>
+    <nav
+        class="fixed top-0 w-full z-50 bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-stone-200 dark:border-stone-800">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center">
+                <img alt="The Portrait House Logo" class="h-12 w-auto invert dark:invert-0" src="images/logo.png"
+                    width="938" height="1001" />
+            </a>
+            <div class="hidden md:flex space-x-10 text-xs tracking-[0.2em] uppercase font-medium nav-links">
+                <a class="hover:text-primary transition-colors" href="index.html" data-page="index">Home</a>
+                <a class="hover:text-primary transition-colors" href="Gallery.html" data-page="Gallery">Gallery</a>
+                <a class="hover:text-primary transition-colors" href="AboutUs.html" data-page="AboutUs">About Us</a>
+                <a class="hover:text-primary transition-colors" href="ContactUs.html" data-page="ContactUs">Contact</a>
+            </div>
+            <div class="flex items-center space-x-6 hover-effect">
+                <button
+                    class="p-2 hover:bg-stone-100 dark:hover:bg-stone-900 rounded-full transition-colors theme-toggle-btn"
+                    id="mode-toggle">
+                    <span class="material-icons-outlined">dark_mode</span>
+                </button>
+                <button class="md:hidden p-2 text-stone-800 dark:text-stone-200" id="mobile-menu-btn">
+                    <span class="material-icons-outlined text-2xl">menu</span>
+                </button>
+                <a class="hidden md:block border border-stone-900 dark:border-white px-8 py-3 text-[10px] tracking-[0.2em] uppercase hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all"
+                    href="Gallery.html">
+                    View Portfolio
+                </a>
+            </div>
+        </div>
+    </nav>
 
-    <div data-include="mobile-menu"></div>
+    <div id="mobile-menu"
+        class="fixed inset-0 h-screen w-screen bg-white/95 dark:bg-black/98 backdrop-blur-xl z-[100] translate-x-full transition-transform duration-500 md:hidden mobile-nav-watermark overflow-hidden">
+        <div class="p-6 flex justify-between items-center border-b border-stone-200/50 dark:border-stone-800/50">
+            <a href="index.html">
+                <img alt="The Portrait House Logo" class="h-8 w-auto invert dark:invert-0" src="images/logo.png"
+                    width="938" height="1001" />
+            </a>
+            <button id="close-menu-btn" class="p-2 text-stone-800 dark:text-stone-200">
+                <span class="material-icons-outlined text-3xl">close</span>
+            </button>
+        </div>
+        <div
+            class="flex flex-col items-center justify-center space-y-10 h-[75vh] text-lg tracking-[0.4em] uppercase font-light mobile-nav-links">
+            <a class="hover:text-primary transition-colors mobile-link relative group" href="index.html"
+                data-page="index">
+                Home
+                <span
+                    class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-px bg-primary transition-all group-hover:w-full"></span>
+            </a>
+            <a class="hover:text-primary transition-colors mobile-link relative group" href="Gallery.html"
+                data-page="Gallery">
+                Gallery
+                <span
+                    class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-px bg-primary transition-all group-hover:w-full"></span>
+            </a>
+            <a class="hover:text-primary transition-colors mobile-link relative group" href="AboutUs.html"
+                data-page="AboutUs">
+                About Us
+                <span
+                    class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-px bg-primary transition-all group-hover:w-full"></span>
+            </a>
+            <a class="hover:text-primary transition-colors mobile-link relative group" href="ContactUs.html"
+                data-page="ContactUs">
+                Contact
+                <span
+                    class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-px bg-primary transition-all group-hover:w-full"></span>
+            </a>
+            <a class="mt-12 border border-stone-800/30 dark:border-stone-200/30 px-12 py-5 text-xs tracking-[0.3em] uppercase hover:bg-stone-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-all"
+                href="ContactUs.html">Book a Session</a>
+        </div>
+    </div>
     <main class="max-w-7xl mx-auto px-6 py-16 md:py-24">
         <header class="mb-16 md:mb-24 text-center">
             <h1 class="font-display text-5xl md:text-7xl mb-6 tracking-tight">Begin Your Story</h1>
@@ -218,7 +286,45 @@
             </div>
         </section>
     </main>
-    <div data-include="footer"></div>
+    <footer class="bg-stone-100 dark:bg-black py-20 px-6 border-t border-stone-200 dark:border-stone-900">
+        <div class="max-w-7xl mx-auto flex flex-col items-center">
+            <a href="index.html" class="mb-12">
+                <img alt="The Portrait House Logo" class="h-20 w-auto invert dark:invert-0 opacity-50"
+                    src="images/logo.png" width="938" height="1001" />
+            </a>
+            <div
+                class="grid grid-cols-1 md:grid-cols-3 gap-12 w-full text-center md:text-left border-b border-stone-200 dark:border-stone-800 pb-16">
+                <div>
+                    <h4 class="text-[10px] uppercase tracking-[0.3em] font-bold mb-6 text-primary">The Studio</h4>
+                    <p class="text-sm text-stone-600 dark:text-stone-400 font-light leading-relaxed">
+                        A/p Karad, Tal-Karad,<br />
+                        Dist-Satara, Maharashtra, 415110
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-[10px] uppercase tracking-[0.3em] font-bold mb-6 text-primary">Contact</h4>
+                    <p class="text-sm text-stone-600 dark:text-stone-400 font-light leading-relaxed">
+                        +91 95112 36233<br />
+                        hello@theportraithouse.com
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-[10px] uppercase tracking-[0.3em] font-bold mb-6 text-primary">Follow Information
+                    </h4>
+                    <div class="flex justify-center md:justify-start space-x-8 text-[10px] uppercase tracking-widest">
+                        <a class="hover:text-primary transition-colors"
+                            href="https://www.instagram.com/p/DTdOQCdiO8t/?igsh=MWRlemRrNDN2bm9kdw==">Instagram</a>
+                        <a class="hover:text-primary transition-colors" href="#">Pinterest</a>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="mt-12 text-[10px] tracking-[0.2em] text-stone-500 uppercase flex flex-col items-center space-y-2">
+                <p>© <span class="current-year">2026</span> THE PORTRAIT HOUSE. ALL RIGHTS RESERVED.</p>
+                <p class="opacity-50">DEVELOPED BY CHAARTECH TECHNOLOGIES PVT. LTD</p>
+            </div>
+        </div>
+    </footer>
 
 </body>
 
