@@ -5,6 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | The Portrait House</title>
+    <script>
+        (function () {
+            const theme = localStorage.getItem('theme');
+            if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        })();
+    </script>
     <meta name="description"
         content="Discover the philosophy and artistry behind The Portrait House. We specialize in high-end monochrome portraiture that captures the raw, elegant character of our subjects." />
     <meta name="keywords"
@@ -18,9 +28,29 @@
     <meta property="og:image" content="https://theportraithouse.com/images/img3.webp" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&display=swap" rel="stylesheet">
+    <link rel="preload" as="image" href="images/img3.webp" />
     <link rel="stylesheet" href="output.css">
     <script src="main.js"></script>
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://theportraithouse.com/"
+      }, {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "About Us",
+        "item": "https://theportraithouse.com/AboutUs.html"
+      }]
+    }
+    </script>
 </head>
 
 <body
@@ -28,7 +58,8 @@
     <nav
         class="fixed top-0 w-full z-50 px-8 py-6 flex justify-between items-center bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-stone-200 dark:border-stone-800">
         <a href="index.html" class="flex items-center gap-4">
-            <img alt="The Portrait House Logo" class="h-12 w-auto invert dark:invert-0" src="images/logo.png" />
+            <img alt="The Portrait House Logo" class="h-12 w-auto invert dark:invert-0" src="images/logo.png"
+                width="938" height="1001" />
         </a>
         <div class="hidden md:flex gap-12 text-sm uppercase tracking-[0.2em] font-medium">
             <a class="hover:text-primary transition-colors" href="index.html">Home</a>
@@ -98,9 +129,9 @@
             </div>
             <div class="md:col-span-5 relative">
                 <div class="aspect-[4/5] overflow-hidden image-container">
-                    <img alt="High-end portrait camera equipment"
+                    <img alt="High-end professional portrait camera equipment in studio"
                         class="w-full h-full object-cover image-reveal lazy-img" src="images/img3.webp" loading="lazy"
-                        decoding="async" />
+                        decoding="async" width="4000" height="6000" />
                 </div>
             </div>
         </div>
@@ -110,14 +141,15 @@
         <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-24 items-center">
             <div class="relative">
                 <div class="aspect-[3/4] overflow-hidden">
-                    <img alt="Professional photography studio setting"
+                    <img alt="Professional monochrome photography studio lighting setup"
                         class="w-full h-full object-cover grayscale lazy-img" src="images/img4.webp" loading="lazy"
-                        decoding="async" />
+                        decoding="async" width="3681" height="5522" />
                 </div>
                 <div
                     class="absolute -bottom-12 -right-12 w-64 h-80 hidden md:block border-8 border-background-light dark:border-background-dark overflow-hidden shadow-2xl">
-                    <img alt="Close-up of a high-quality portrait print" class="w-full h-full object-cover lazy-img"
-                        src="images/img1.webp" loading="lazy" decoding="async" />
+                    <img alt="Detailed close-up of a high-quality luxury portrait print"
+                        class="w-full h-full object-cover lazy-img" src="images/img1.webp" loading="lazy"
+                        decoding="async" width="4000" height="6000" />
                 </div>
             </div>
             <div class="space-y-12">
@@ -180,13 +212,14 @@
                 </div>
             </div>
             <div class="relative h-[600px] md:h-[800px]">
-                <img alt="Portrait highlighting facial textures and features"
+                <img alt="Premium monochrome portrait highlighting intimate facial textures"
                     class="w-full h-full object-cover grayscale lazy-img" src="images/img5.webp" loading="lazy"
-                    decoding="async" />
+                    decoding="async" width="4000" height="6000" />
             </div>
         </div>
         <div class="absolute right-0 bottom-0 opacity-5 pointer-events-none translate-x-1/4 translate-y-1/4">
-            <img alt="Decorative Logo" class="w-[800px] invert dark:invert-0" src="images/logo.png" />
+            <img alt="The Portrait House Decorative Bottom Logo" class="w-[800px] invert dark:invert-0"
+                src="images/logo.png" width="938" height="1001" />
         </div>
     </section>
 
@@ -206,7 +239,8 @@
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
             <div class="flex flex-col items-center md:items-start gap-3">
                 <a href="index.html" class="flex-shrink-0">
-                    <img alt="The Portrait House Logo" class="h-10 w-auto invert dark:invert-0" src="images/logo.png" />
+                    <img alt="The Portrait House Footer Logo" class="h-10 w-auto invert dark:invert-0"
+                        src="images/logo.png" width="938" height="1001" />
                 </a>
                 <div class="space-y-1 text-[10px] tracking-widest text-stone-400 uppercase">
                     <p>© 2026 The Portrait House. All Rights Reserved.</p>

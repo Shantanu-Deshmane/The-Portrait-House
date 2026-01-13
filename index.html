@@ -5,6 +5,16 @@
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <title>The Portrait House | Luxury Photography Studio</title>
+  <script>
+    (function () {
+      const theme = localStorage.getItem('theme');
+      if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    })();
+  </script>
   <meta name="description"
     content="The Portrait House is a luxury photography studio in Karad, Maharashtra, specializing in high-end monochrome portraiture and timeless visual narratives." />
   <meta name="keywords"
@@ -29,9 +39,24 @@
 
   <link href="https://fonts.googleapis.com" rel="preconnect" />
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="images/img1.webp" />
   <link rel="stylesheet" href="output.css">
   <script src="main.js" defer></script>
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://theportraithouse.com/"
+    }]
+  }
+  </script>
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
@@ -74,7 +99,8 @@
     class="fixed top-0 w-full z-50 bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-stone-200 dark:border-stone-800">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
       <a href="index.html" class="flex items-center">
-        <img alt="The Portrait House Logo" class="h-12 w-auto invert dark:invert-0" src="images/logo.png" />
+        <img alt="The Portrait House Logo" class="h-12 w-auto invert dark:invert-0" src="images/logo.png" width="938"
+          height="1001" />
       </a>
       <div class="hidden md:flex space-x-10 text-xs tracking-[0.2em] uppercase font-medium">
         <a class="hover:text-primary transition-colors" href="index.html">Home</a>
@@ -137,7 +163,7 @@
   </div>
   <section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
     <img alt="Luxury B&amp;W Portrait" class="absolute inset-0 w-full h-full object-cover grayscale brightness-75"
-      src="images/img1.webp" decoding="async" />
+      src="images/img1.webp" decoding="async" width="4000" height="6000" />
     <div class="absolute inset-0 hero-gradient"></div>
     <div class="relative z-10 text-center px-6">
       <h1 class="font-display text-5xl md:text-8xl text-white mb-6 italic">The Art of Essence</h1>
@@ -173,7 +199,7 @@
       <div class="relative group overflow-hidden">
         <img alt="Signature Portrait"
           class="w-full grayscale brightness-90 group-hover:scale-105 transition-transform duration-700 lazy-img"
-          src="images/img2.webp" loading="lazy" decoding="async" />
+          src="images/img2.webp" loading="lazy" decoding="async" width="4000" height="6000" />
         <div class="absolute inset-0 border-[20px] border-white/10 pointer-events-none"></div>
       </div>
     </div>
@@ -186,34 +212,34 @@
       </div>
       <div class="masonry">
         <div class="masonry-item overflow-hidden bg-stone-200 dark:bg-stone-900">
-          <img alt="Portrait 1"
+          <img alt="Monochrome Wedding Portrait"
             class="w-full grayscale hover:grayscale-0 transition-all duration-500 cursor-pointer lazy-img"
-            src="images/img3.webp" loading="lazy" decoding="async" />
+            src="images/img3.webp" loading="lazy" decoding="async" width="4000" height="6000" />
         </div>
         <div class="masonry-item overflow-hidden bg-stone-200 dark:bg-stone-900">
-          <img alt="Portrait 2"
+          <img alt="Elegant Pre-Wedding Photography"
             class="w-full grayscale hover:grayscale-0 transition-all duration-500 cursor-pointer lazy-img"
-            src="images/img4.webp" loading="lazy" decoding="async" />
+            src="images/img4.webp" loading="lazy" decoding="async" width="3681" height="5522" />
         </div>
         <div class="masonry-item overflow-hidden bg-stone-200 dark:bg-stone-900">
-          <img alt="Portrait 3"
+          <img alt="Luxurious Couple Portrait"
             class="w-full grayscale hover:grayscale-0 transition-all duration-500 cursor-pointer lazy-img"
-            src="images/img5.webp" loading="lazy" decoding="async" />
+            src="images/img5.webp" loading="lazy" decoding="async" width="4000" height="6000" />
         </div>
         <div class="masonry-item overflow-hidden bg-stone-200 dark:bg-stone-900">
-          <img alt="Portrait 4"
+          <img alt="Modern Editorial Style Portrait"
             class="w-full grayscale hover:grayscale-0 transition-all duration-500 cursor-pointer lazy-img"
-            src="images/img6.webp" loading="lazy" decoding="async" />
+            src="images/img6.webp" loading="lazy" decoding="async" width="4000" height="6000" />
         </div>
         <div class="masonry-item overflow-hidden bg-stone-200 dark:bg-stone-900">
-          <img alt="Portrait 5"
+          <img alt="Artistic Narrative Photography"
             class="w-full grayscale hover:grayscale-0 transition-all duration-500 cursor-pointer lazy-img"
-            src="images/img7.webp" loading="lazy" decoding="async" />
+            src="images/img7.webp" loading="lazy" decoding="async" width="3681" height="5522" />
         </div>
         <div class="masonry-item overflow-hidden bg-stone-200 dark:bg-stone-900">
-          <img alt="Portrait 6"
+          <img alt="Timeless Soul Portrait"
             class="w-full grayscale hover:grayscale-0 transition-all duration-500 cursor-pointer lazy-img"
-            src="images/img1.webp" loading="lazy" decoding="async" />
+            src="images/img1.webp" loading="lazy" decoding="async" width="4000" height="6000" />
         </div>
       </div>
       <div class="mt-16 text-center">
@@ -260,7 +286,8 @@
   <footer class="bg-stone-100 dark:bg-black py-20 px-6 border-t border-stone-200 dark:border-stone-900">
     <div class="max-w-7xl mx-auto flex flex-col items-center">
       <a href="index.html" class="mb-12">
-        <img alt="The Portrait House Logo" class="h-20 w-auto invert dark:invert-0 opacity-50" src="images/logo.png" />
+        <img alt="The Portrait House Logo" class="h-20 w-auto invert dark:invert-0 opacity-50" src="images/logo.png"
+          width="938" height="1001" />
       </a>
       <div
         class="grid grid-cols-1 md:grid-cols-3 gap-12 w-full text-center md:text-left border-b border-stone-200 dark:border-stone-800 pb-16">

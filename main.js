@@ -1,13 +1,7 @@
 // Theme Management
 function initTheme() {
-    const theme = localStorage.getItem('theme');
-    const isDark = theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches);
-
-    if (isDark) {
-        document.documentElement.classList.add('dark');
-    } else {
-        document.documentElement.classList.remove('dark');
-    }
+    // Core theme class application is handled by head script to prevent FOUC.
+    // Here we just ensure the icons are updated correctly on load.
     updateThemeIcon();
 
     // Toggle listener for specific ID if it exists
