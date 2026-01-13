@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Contact Us | The Portrait House</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="output.css">
+    <script src="main.js"></script>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-gray-800 dark:text-gray-200 font-sans transition-colors duration-300">
+    <nav
+        class="border-b border-gray-200 dark:border-studio-grey sticky top-0 bg-white/80 dark:bg-black/80 backdrop-blur-md z-50">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center space-x-2">
+                <img alt="The Portrait House Logo" class="h-12 w-auto invert dark:invert-0" src="images/logo.png" />
+            </a>
+            <div class="hidden md:flex space-x-12 text-xs uppercase tracking-[0.2em] font-medium">
+                <a class="hover:text-primary transition-colors" href="index.html">Home</a>
+                <a class="hover:text-primary transition-colors" href="Gallery.html">Gallery</a>
+                <a class="hover:text-primary transition-colors" href="AboutUs.html">About Us</a>
+                <a class="text-primary" href="ContactUs.html">Contact</a>
+            </div>
+            <div class="flex items-center space-x-4 md:space-x-6">
+                <button class="p-2 hover:bg-gray-100 dark:hover:bg-studio-grey rounded-full transition-colors"
+                    id="mode-toggle">
+                    <span class="material-icons-outlined">dark_mode</span>
+                </button>
+                <button class="md:hidden p-2 text-stone-800 dark:text-stone-200" id="mobile-menu-btn">
+                    <span class="material-icons-outlined text-2xl">menu</span>
+                </button>
+                <a class="hidden md:block border border-gray-900 dark:border-white px-8 py-3 text-[10px] tracking-[0.2em] uppercase hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all"
+                    href="Gallery.html">
+                    View Portfolio
+                </a>
+            </div>
+        </div>
+
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu"
+        class="fixed inset-0 h-screen w-screen bg-white/90 dark:bg-black/95 backdrop-blur-xl z-[100] translate-x-full transition-transform duration-500 md:hidden mobile-nav-watermark overflow-hidden">
+        <div class="p-6 flex justify-between items-center border-b border-stone-200/50 dark:border-stone-800/50">
+            <a href="index.html">
+                <img alt="The Portrait House Logo" class="h-8 w-auto invert dark:invert-0" src="images/logo.png" />
+            </a>
+            <button id="close-menu-btn" class="p-2 text-stone-800 dark:text-stone-200">
+                <span class="material-icons-outlined text-3xl">close</span>
+            </button>
+        </div>
+        <div
+            class="flex flex-col items-center justify-center space-y-10 h-[75vh] text-lg tracking-[0.4em] uppercase font-light">
+            <a class="hover:text-primary transition-colors mobile-link relative group" href="index.html">
+                Home
+                <span
+                    class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-px bg-primary transition-all group-hover:w-full"></span>
+            </a>
+            <a class="hover:text-primary transition-colors mobile-link relative group" href="Gallery.html">
+                Gallery
+                <span
+                    class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-px bg-primary transition-all group-hover:w-full"></span>
+            </a>
+            <a class="hover:text-primary transition-colors mobile-link relative group" href="AboutUs.html">
+                About Us
+                <span
+                    class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-px bg-primary transition-all group-hover:w-full"></span>
+            </a>
+            <a class="hover:text-primary transition-colors mobile-link relative group" href="ContactUs.html">
+                Contact
+                <span
+                    class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-px bg-primary transition-all group-hover:w-full"></span>
+            </a>
+            <a class="mt-12 border border-stone-800/30 dark:border-stone-200/30 px-12 py-5 text-xs tracking-[0.3em] uppercase hover:bg-stone-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-all"
+                href="ContactUs.html">Book a Session</a>
+        </div>
+    </div>
+    <main class="max-w-7xl mx-auto px-6 py-16 md:py-24">
+        <header class="mb-16 md:mb-24 text-center">
+            <h1 class="font-display text-5xl md:text-7xl mb-6 tracking-tight">Begin Your Story</h1>
+            <p class="max-w-2xl mx-auto text-gray-500 dark:text-gray-400 text-lg leading-relaxed font-light">
+                Every portrait is a collaboration. We invite you to reach out and share your vision with us.
+            </p>
+        </header>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32">
+            <section>
+                <h2 class="font-display text-3xl mb-8 border-b border-gray-100 dark:border-studio-grey pb-4">Booking
+                    Inquiry</h2>
+                <form id="full-contact-form" class="space-y-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="space-y-2">
+                            <label class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">Full
+                                Name</label>
+                            <input id="full-name" required
+                                class="w-full bg-transparent border-0 border-b border-gray-300 dark:border-studio-grey focus:ring-0 focus:border-primary px-0 py-2 transition-colors"
+                                placeholder="Kedar Kumbhar" type="text" />
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">Email
+                                Address</label>
+                            <input id="full-email" required
+                                class="w-full bg-transparent border-0 border-b border-gray-300 dark:border-studio-grey focus:ring-0 focus:border-primary px-0 py-2 transition-colors"
+                                placeholder="hello@example.com" type="email" />
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="space-y-2">
+                            <label class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">Inquiry
+                                Type</label>
+                            <select id="inquiry-type"
+                                class="w-full bg-transparent border-0 border-b border-gray-300 dark:border-studio-grey focus:ring-0 focus:border-primary px-0 py-2 transition-colors">
+                                <option>Wedding Photography</option>
+                                <option>Pre-Wedding</option>
+                                <option>Engagement</option>
+                                <option>Outdoor Photography</option>
+                                <option>Videography</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">Preferred
+                                Date</label>
+                            <input id="preferred-date"
+                                class="w-full bg-transparent border-0 border-b border-gray-300 dark:border-studio-grey focus:ring-0 focus:border-primary px-0 py-2 transition-colors"
+                                type="date" />
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">The Vision</label>
+                        <textarea id="vision" required
+                            class="w-full bg-transparent border-0 border-b border-gray-300 dark:border-studio-grey focus:ring-0 focus:border-primary px-0 py-2 transition-colors resize-none"
+                            placeholder="Tell us about the atmosphere and style you're imagining..."
+                            rows="4"></textarea>
+                    </div>
+                    <button
+                        class="silver-gradient w-full py-5 text-black font-medium uppercase tracking-[0.3em] text-xs transition-all duration-300 hover:shadow-xl"
+                        type="submit">
+                        Send Inquiry
+                    </button>
+                </form>
+            </section>
+            <section class="space-y-16">
+                <div>
+                    <h2 class="font-display text-3xl mb-8 border-b border-gray-100 dark:border-studio-grey pb-4">The
+                        Studio</h2>
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <span class="material-icons-outlined text-primary">location_on</span>
+                            <div>
+                                <h3 class="font-medium text-lg">Address</h3>
+                                A/p Karad, Tal-Karad,<br />
+                                Dist-Satara, Maharashtra, 415110
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <span class="material-icons-outlined text-primary">phone</span>
+                            <div>
+                                <h3 class="font-medium text-lg">Phone</h3>
+                                <p class="text-gray-500 dark:text-gray-400 font-light leading-relaxed">
+                                    +91 95112 36233
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <span class="material-icons-outlined text-primary">schedule</span>
+                            <div>
+                                <h3 class="font-medium text-lg">Hours</h3>
+                                <p class="text-gray-500 dark:text-gray-400 font-light leading-relaxed">
+                                    Tuesday – Saturday: 10:00 AM – 6:00 PM<br />
+                                    Sunday &amp; Monday: By Appointment Only
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative aspect-video bg-gray-100 dark:bg-studio-grey overflow-hidden group">
+                    <img alt="Map Location Abstract"
+                        class="w-full h-full object-cover grayscale opacity-50 transition-transform duration-700 group-hover:scale-105 lazy-img"
+                        src="images/img6.webp" loading="lazy" decoding="async" />
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div
+                            class="bg-white/90 dark:bg-black/90 p-6 shadow-2xl backdrop-blur-sm border border-gray-200 dark:border-studio-grey">
+                            <p class="text-[10px] uppercase tracking-widest text-primary font-bold mb-1">Our Location
+                            </p>
+                            <p class="font-display text-xl">Karad, Maharashtra</p>
+                            <button class="mt-4 text-[10px] uppercase tracking-widest border-b border-primary pb-1">Open
+                                in Maps</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <section class="mt-32 border-t border-gray-100 dark:border-studio-grey pt-24">
+            <h2 class="font-display text-4xl text-center mb-16 tracking-tight">Frequently Asked Questions</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
+                <div class="space-y-3">
+                    <h3 class="font-medium text-lg flex items-center">
+                        <span class="material-icons-outlined text-primary mr-3 text-sm">circle</span>
+                        How far in advance should I book?
+                    </h3>
+                    <p class="text-gray-500 dark:text-gray-400 font-light leading-relaxed pl-8">
+                        We typically recommend booking 4-6 weeks in advance to ensure your preferred date, especially
+                        for weekend sessions.
+                    </p>
+                </div>
+                <div class="space-y-3">
+                    <h3 class="font-medium text-lg flex items-center">
+                        <span class="material-icons-outlined text-primary mr-3 text-sm">circle</span>
+                        Do you provide wardrobe styling?
+                    </h3>
+                    <p class="text-gray-500 dark:text-gray-400 font-light leading-relaxed pl-8">
+                        Yes, every session includes a consultation where we discuss styling, and we have a curated
+                        studio wardrobe available for use.
+                    </p>
+                </div>
+                <div class="space-y-3">
+                    <h3 class="font-medium text-lg flex items-center">
+                        <span class="material-icons-outlined text-primary mr-3 text-sm">circle</span>
+                        What is your turnaround time for portraits?
+                    </h3>
+                    <p class="text-gray-500 dark:text-gray-400 font-light leading-relaxed pl-8">
+                        The viewing appointment takes place 1 week after your session. Final prints and albums are
+                        typically ready within 3-4 weeks of selection.
+                    </p>
+                </div>
+                <div class="space-y-3">
+                    <h3 class="font-medium text-lg flex items-center">
+                        <span class="material-icons-outlined text-primary mr-3 text-sm">circle</span>
+                        Do you offer digital files?
+                    </h3>
+                    <p class="text-gray-500 dark:text-gray-400 font-light leading-relaxed pl-8">
+                        We are a boutique studio specializing in high-quality physical prints, however, the matching
+                        digital file is included with every portrait purchased.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-gray-50 dark:bg-studio-grey/50 border-t border-gray-100 dark:border-studio-grey py-16">
+        <div
+            class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 text-center md:text-left">
+            <a href="index.html">
+                <img alt="Logo" class="h-10 w-auto invert dark:invert-0 opacity-50" src="images/logo.png" />
+            </a>
+            <div class="text-[10px] uppercase tracking-widest text-gray-500 space-y-2">
+                <p>© 2026 THE PORTRAIT HOUSE. ALL RIGHTS RESERVED.</p>
+                <p class="opacity-70">DEVELOPED BY CHAARTECH TECHNOLOGIES PVT. LTD</p>
+            </div>
+            <div class="flex space-x-8">
+                <a class="text-gray-500 hover:text-primary transition-colors uppercase text-[10px] tracking-widest"
+                    href="https://www.instagram.com/p/DTdOQCdiO8t/?igsh=MWRlemRrNDN2bm9kdw==">Instagram</a>
+                <a class="text-gray-500 hover:text-primary transition-colors uppercase text-[10px] tracking-widest"
+                    href="#">Pinterest</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
