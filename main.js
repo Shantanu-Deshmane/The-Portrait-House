@@ -162,13 +162,16 @@ function handleWhatsAppSubmit(formId) {
     const form = document.getElementById(formId);
     if (!form) return;
 
+    // Config
+    const WHATSAPP_NUMBER = "919511236233";
+
     form.addEventListener('submit', (e) => {
         e.preventDefault();
         clearValidationErrors(form);
 
         let isValid = true;
-        const adminWhatsapp = "919511236233";
         let message = `*New Inquiry from The Portrait House*\n\n`;
+        const submitBtn = form.querySelector('button[type="submit"]');
 
         if (formId === 'contact-form') {
             const nameField = document.getElementById('name');
@@ -229,10 +232,24 @@ function handleWhatsAppSubmit(formId) {
         }
 
         if (isValid) {
+            // Add loading state
+            if (submitBtn) {
+                submitBtn.classList.add('btn-loading');
+                submitBtn.disabled = true;
+            }
+
             const encodedMessage = encodeURIComponent(message);
-            window.open(`https://wa.me/${adminWhatsapp}?text=${encodedMessage}`, '_blank');
-            showSuccessModal();
-            form.reset();
+            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`, '_blank');
+
+            // Remove loading state and show success
+            setTimeout(() => {
+                if (submitBtn) {
+                    submitBtn.classList.remove('btn-loading');
+                    submitBtn.disabled = false;
+                }
+                showSuccessModal();
+                form.reset();
+            }, 500);
         }
     });
 }

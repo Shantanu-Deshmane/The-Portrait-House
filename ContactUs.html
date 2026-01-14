@@ -58,8 +58,9 @@
 
 <body
     class="bg-background-light dark:bg-background-dark text-gray-800 dark:text-gray-200 font-sans transition-colors duration-300">
-    <nav
-        class="fixed top-0 w-full z-50 bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-stone-200 dark:border-stone-800">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-stone-200 dark:border-stone-800"
+        role="navigation" aria-label="Main navigation">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <a href="index.html" class="flex items-center">
                 <img alt="The Portrait House Logo" class="h-12 w-auto invert dark:invert-0" src="images/logo.png"
@@ -75,10 +76,11 @@
             <div class="flex items-center space-x-6 hover-effect">
                 <button
                     class="p-2 hover:bg-stone-100 dark:hover:bg-stone-900 rounded-full transition-colors theme-toggle-btn"
-                    id="mode-toggle">
+                    id="mode-toggle" aria-label="Toggle dark mode">
                     <span class="material-icons-outlined">dark_mode</span>
                 </button>
-                <button class="md:hidden p-2 text-stone-800 dark:text-stone-200" id="mobile-menu-btn">
+                <button class="md:hidden p-2 text-stone-800 dark:text-stone-200" id="mobile-menu-btn"
+                    aria-label="Open menu">
                     <span class="material-icons-outlined text-2xl">menu</span>
                 </button>
                 <a class="hidden md:block border border-stone-900 dark:border-white px-8 py-3 text-[10px] tracking-[0.2em] uppercase hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all"
@@ -96,7 +98,7 @@
                 <img alt="The Portrait House Logo" class="h-8 w-auto invert dark:invert-0" src="images/logo.png"
                     width="938" height="1001" />
             </a>
-            <button id="close-menu-btn" class="p-2 text-stone-800 dark:text-stone-200">
+            <button id="close-menu-btn" class="p-2 text-stone-800 dark:text-stone-200" aria-label="Close menu">
                 <span class="material-icons-outlined text-3xl">close</span>
             </button>
         </div>
@@ -130,7 +132,7 @@
                 href="ContactUs.html">Book a Session</a>
         </div>
     </div>
-    <main class="max-w-7xl mx-auto px-6 py-16 md:py-24">
+    <main id="main-content" class="max-w-7xl mx-auto px-6 py-16 md:py-24">
         <header class="mb-16 md:mb-24 text-center scroll-animate animate-fade-up">
             <h1 class="font-display text-5xl md:text-7xl mb-6 tracking-tight">Begin Your Story</h1>
             <p class="max-w-2xl mx-auto text-gray-500 dark:text-gray-400 text-lg leading-relaxed font-light">
@@ -238,8 +240,10 @@
                             <p class="text-[10px] uppercase tracking-widest text-primary font-bold mb-1">Our Location
                             </p>
                             <p class="font-display text-xl">Karad, Maharashtra</p>
-                            <button class="mt-4 text-[10px] uppercase tracking-widest border-b border-primary pb-1">Open
-                                in Maps</button>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Karad+Maharashtra+415110"
+                                target="_blank" rel="noopener noreferrer"
+                                class="mt-4 text-[10px] uppercase tracking-widest border-b border-primary pb-1 inline-block hover:text-primary transition-colors">Open
+                                in Maps</a>
                         </div>
                     </div>
                 </div>

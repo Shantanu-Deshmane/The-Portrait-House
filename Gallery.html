@@ -58,8 +58,9 @@
 
 <body
     class="bg-background-light dark:bg-background-dark text-stone-900 dark:text-stone-100 font-sans transition-colors duration-300 selection:bg-gold selection:text-white">
-    <nav
-        class="fixed top-0 w-full z-50 bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-stone-200 dark:border-stone-800">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-stone-200 dark:border-stone-800"
+        role="navigation" aria-label="Main navigation">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <a href="index.html" class="flex items-center">
                 <img alt="The Portrait House Logo" class="h-12 w-auto invert dark:invert-0" src="images/logo.png"
@@ -75,10 +76,11 @@
             <div class="flex items-center space-x-6 hover-effect">
                 <button
                     class="p-2 hover:bg-stone-100 dark:hover:bg-stone-900 rounded-full transition-colors theme-toggle-btn"
-                    id="mode-toggle">
+                    id="mode-toggle" aria-label="Toggle dark mode">
                     <span class="material-icons-outlined">dark_mode</span>
                 </button>
-                <button class="md:hidden p-2 text-stone-800 dark:text-stone-200" id="mobile-menu-btn">
+                <button class="md:hidden p-2 text-stone-800 dark:text-stone-200" id="mobile-menu-btn"
+                    aria-label="Open menu">
                     <span class="material-icons-outlined text-2xl">menu</span>
                 </button>
                 <a class="hidden md:block border border-stone-900 dark:border-white px-8 py-3 text-[10px] tracking-[0.2em] uppercase hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all"
@@ -96,7 +98,7 @@
                 <img alt="The Portrait House Logo" class="h-8 w-auto invert dark:invert-0" src="images/logo.png"
                     width="938" height="1001" />
             </a>
-            <button id="close-menu-btn" class="p-2 text-stone-800 dark:text-stone-200">
+            <button id="close-menu-btn" class="p-2 text-stone-800 dark:text-stone-200" aria-label="Close menu">
                 <span class="material-icons-outlined text-3xl">close</span>
             </button>
         </div>
@@ -130,262 +132,285 @@
                 href="ContactUs.html">Book a Session</a>
         </div>
     </div>
-    <header class="pt-40 pb-20 px-6 text-center max-w-4xl mx-auto fade-in">
-        <h1 class="font-display text-5xl md:text-7xl font-light mb-6 italic tracking-tight">The Portrait House Gallery
-        </h1>
-        <p
-            class="text-sm md:text-base text-slate-500 dark:text-slate-400 max-w-xl mx-auto font-light leading-relaxed tracking-wide">
-            A curated collection of visual narratives, capturing the essence of the human spirit through the lens of
-            sophisticated artistry.
-        </p>
-    </header>
-    <section class="max-w-7xl mx-auto px-6 mb-12">
-        <div class="flex flex-wrap justify-center gap-8 md:gap-12 border-b border-black/5 dark:border-white/10 pb-6">
-            <button
-                class="filter-btn active text-[10px] uppercase tracking-[0.4em] font-medium transition-all hover:text-gold">All
-                Works</button>
-            <button
-                class="filter-btn text-[10px] uppercase tracking-[0.4em] font-medium transition-all text-slate-500 hover:text-gold">Wedding</button>
-            <button
-                class="filter-btn text-[10px] uppercase tracking-[0.4em] font-medium transition-all text-slate-500 hover:text-gold">Pre-Wedding</button>
-            <button
-                class="filter-btn text-[10px] uppercase tracking-[0.4em] font-medium transition-all text-slate-500 hover:text-gold">Engagement</button>
-            <button
-                class="filter-btn text-[10px] uppercase tracking-[0.4em] font-medium transition-all text-slate-500 hover:text-gold">Outdoor</button>
-            <button
-                class="filter-btn text-[10px] uppercase tracking-[0.4em] font-medium transition-all text-slate-500 hover:text-gold">Cinematography</button>
-            <button
-                class="filter-btn text-[10px] uppercase tracking-[0.4em] font-medium transition-all text-slate-500 hover:text-gold">Other</button>
-        </div>
-    </section>
-    <main class="max-w-7xl mx-auto px-6 pb-32">
-        <div class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
-            <div class="gallery-item relative overflow-hidden group cursor-pointer bg-neutral-200 dark:bg-neutral-900">
-                <img alt="Wedding Portrait: Eternal Bond"
-                    class="w-full grayscale hover:grayscale-0 transition-all duration-700 ease-in-out transform group-hover:scale-105 lazy-img"
-                    src="images/img1.webp" loading="lazy" decoding="async" width="4000" height="6000" />
-                <div
-                    class="overlay absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-500 flex flex-col justify-end p-8">
-                    <span class="text-[10px] uppercase tracking-[0.3em] text-gold mb-2">Wedding</span>
-                    <h3 class="font-display text-2xl text-white">Eternal Bond</h3>
-                </div>
-            </div>
-            <div class="gallery-item relative overflow-hidden group cursor-pointer bg-neutral-200 dark:bg-neutral-900">
-                <img alt="Pre-Wedding Photography: Ethereal Light"
-                    class="w-full grayscale hover:grayscale-0 transition-all duration-700 ease-in-out transform group-hover:scale-105 lazy-img"
-                    src="images/img2.webp" loading="lazy" decoding="async" width="4000" height="6000" />
-                <div
-                    class="overlay absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-500 flex flex-col justify-end p-8">
-                    <span class="text-[10px] uppercase tracking-[0.3em] text-gold mb-2">Pre-Wedding</span>
-                    <h3 class="font-display text-2xl text-white">Ethereal Light</h3>
-                </div>
-            </div>
-            <div class="gallery-item relative overflow-hidden group cursor-pointer bg-neutral-200 dark:bg-neutral-900">
-                <img alt="Engagement Portrait: Forever Begins"
-                    class="w-full grayscale hover:grayscale-0 transition-all duration-700 ease-in-out transform group-hover:scale-105 lazy-img"
-                    src="images/img3.webp" loading="lazy" decoding="async" width="4000" height="6000" />
-                <div
-                    class="overlay absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-500 flex flex-col justify-end p-8">
-                    <span class="text-[10px] uppercase tracking-[0.3em] text-gold mb-2">Engagement</span>
-                    <h3 class="font-display text-2xl text-white">Forever Begins</h3>
-                </div>
-            </div>
-            <div class="gallery-item relative overflow-hidden group cursor-pointer bg-neutral-200 dark:bg-neutral-900">
-                <img alt="Outdoor Portrait: Golden Silhouette"
-                    class="w-full grayscale hover:grayscale-0 transition-all duration-700 ease-in-out transform group-hover:scale-105 lazy-img"
-                    src="images/img4.webp" loading="lazy" decoding="async" width="3681" height="5522" />
-                <div
-                    class="overlay absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-500 flex flex-col justify-end p-8">
-                    <span class="text-[10px] uppercase tracking-[0.3em] text-gold mb-2">Outdoor</span>
-                    <h3 class="font-display text-2xl text-white">Golden Silhouette</h3>
-                </div>
-            </div>
-            <div class="gallery-item relative overflow-hidden group cursor-pointer bg-neutral-200 dark:bg-neutral-900">
-                <img alt="Cinematography: The Story"
-                    class="w-full grayscale hover:grayscale-0 transition-all duration-700 ease-in-out transform group-hover:scale-105 lazy-img"
-                    src="images/img5.webp" loading="lazy" decoding="async" width="4000" height="6000" />
-                <div
-                    class="overlay absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-500 flex flex-col justify-end p-8">
-                    <span class="text-[10px] uppercase tracking-[0.3em] text-gold mb-2">Cinematography</span>
-                    <h3 class="font-display text-2xl text-white">The Story</h3>
-                </div>
-            </div>
-            <div class="gallery-item relative overflow-hidden group cursor-pointer bg-neutral-200 dark:bg-neutral-900">
-                <img alt="Other: The Visionary"
-                    class="w-full grayscale hover:grayscale-0 transition-all duration-700 ease-in-out transform group-hover:scale-105 lazy-img"
-                    src="images/img6.webp" loading="lazy" decoding="async" width="4000" height="6000" />
-                <div
-                    class="overlay absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-500 flex flex-col justify-end p-8">
-                    <span class="text-[10px] uppercase tracking-[0.3em] text-gold mb-2">Other</span>
-                    <h3 class="font-display text-2xl text-white">The Visionary</h3>
-                </div>
-            </div>
-            <div class="gallery-item relative overflow-hidden group cursor-pointer bg-neutral-200 dark:bg-neutral-900">
-                <img alt="Pre-Wedding: Grace"
-                    class="w-full grayscale hover:grayscale-0 transition-all duration-700 ease-in-out transform group-hover:scale-105 lazy-img"
-                    src="images/img7.webp" loading="lazy" decoding="async" width="3681" height="5522" />
-                <div
-                    class="overlay absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-500 flex flex-col justify-end p-8">
-                    <span class="text-[10px] uppercase tracking-[0.3em] text-gold mb-2">Pre-Wedding</span>
-                    <h3 class="font-display text-2xl text-white">Urban Grace</h3>
-                </div>
-            </div>
-            <div class="gallery-item relative overflow-hidden group cursor-pointer bg-neutral-200 dark:bg-neutral-900">
-                <img alt="Engagement: Sweet Moments"
-                    class="w-full grayscale hover:grayscale-0 transition-all duration-700 ease-in-out transform group-hover:scale-105 lazy-img"
-                    src="images/img1.webp" loading="lazy" decoding="async" width="4000" height="6000" />
-                <div
-                    class="overlay absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-500 flex flex-col justify-end p-8">
-                    <span class="text-[10px] uppercase tracking-[0.3em] text-gold mb-2">Engagement</span>
-                    <h3 class="font-display text-2xl text-white">Sweet Moments</h3>
-                </div>
-            </div>
-            <div class="gallery-item relative overflow-hidden group cursor-pointer bg-neutral-200 dark:bg-neutral-900">
-                <img alt="Outdoor Portrait: Golden Hour"
-                    class="w-full grayscale hover:grayscale-0 transition-all duration-700 ease-in-out transform group-hover:scale-105 lazy-img"
-                    src="images/img1.webp" loading="lazy" decoding="async" width="4000" height="6000" />
-                <div
-                    class="overlay absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-500 flex flex-col justify-end p-8">
-                    <span class="text-[10px] uppercase tracking-[0.3em] text-gold mb-2">Outdoor</span>
-                    <h3 class="font-display text-2xl text-white">Golden Hour</h3>
-                </div>
-            </div>
-            <div class="gallery-item relative overflow-hidden group cursor-pointer bg-neutral-200 dark:bg-neutral-900">
-                <img alt="Wedding Story: The Vow"
-                    class="w-full grayscale hover:grayscale-0 transition-all duration-700 ease-in-out transform group-hover:scale-105 lazy-img"
-                    src="images/img2.webp" loading="lazy" decoding="async" width="4000" height="6000" />
-                <div
-                    class="overlay absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-500 flex flex-col justify-end p-8">
-                    <span class="text-[10px] uppercase tracking-[0.3em] text-gold mb-2">Wedding</span>
-                    <h3 class="font-display text-2xl text-white">The Vow</h3>
-                </div>
-            </div>
-            <div class="gallery-item relative overflow-hidden group cursor-pointer bg-neutral-200 dark:bg-neutral-900">
-                <img alt="Pre-Wedding Portrait: Classic Elegance"
-                    class="w-full grayscale hover:grayscale-0 transition-all duration-700 ease-in-out transform group-hover:scale-105 lazy-img"
-                    src="images/img3.webp" loading="lazy" decoding="async" width="4000" height="6000" />
-                <div
-                    class="overlay absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-500 flex flex-col justify-end p-8">
-                    <span class="text-[10px] uppercase tracking-[0.3em] text-gold mb-2">Pre-Wedding</span>
-                    <h3 class="font-display text-2xl text-white">Classic Elegance</h3>
-                </div>
-            </div>
-            <div class="gallery-item relative overflow-hidden group cursor-pointer bg-neutral-200 dark:bg-neutral-900">
-                <img alt="Engagement Celebration: The Ring"
-                    class="w-full grayscale hover:grayscale-0 transition-all duration-700 ease-in-out transform group-hover:scale-105 lazy-img"
-                    src="images/img4.webp" loading="lazy" decoding="async" width="3681" height="5522" />
-                <div
-                    class="overlay absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-500 flex flex-col justify-end p-8">
-                    <span class="text-[10px] uppercase tracking-[0.3em] text-gold mb-2">Engagement</span>
-                    <h3 class="font-display text-2xl text-white">The Ring</h3>
-                </div>
-            </div>
-            <div class="gallery-item relative overflow-hidden group cursor-pointer bg-neutral-200 dark:bg-neutral-900">
-                <img alt="Cinematic Cinematography Frame"
-                    class="w-full grayscale hover:grayscale-0 transition-all duration-700 ease-in-out transform group-hover:scale-105 lazy-img"
-                    src="images/img5.webp" loading="lazy" decoding="async" width="4000" height="6000" />
-                <div
-                    class="overlay absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-500 flex flex-col justify-end p-8">
-                    <span class="text-[10px] uppercase tracking-[0.3em] text-gold mb-2">Cinematography</span>
-                    <h3 class="font-display text-2xl text-white">Cinematic Frame</h3>
-                </div>
-            </div>
-            <div class="gallery-item relative overflow-hidden group cursor-pointer bg-neutral-200 dark:bg-neutral-900">
-                <img alt="Outdoor Street Photography: Urban"
-                    class="w-full grayscale hover:grayscale-0 transition-all duration-700 ease-in-out transform group-hover:scale-105 lazy-img"
-                    src="images/img6.webp" loading="lazy" decoding="async" width="4000" height="6000" />
-                <div
-                    class="overlay absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-500 flex flex-col justify-end p-8">
-                    <span class="text-[10px] uppercase tracking-[0.3em] text-gold mb-2">Outdoor</span>
-                    <h3 class="font-display text-2xl text-white">Urban Adventure</h3>
-                </div>
-            </div>
-            <div class="gallery-item relative overflow-hidden group cursor-pointer bg-neutral-200 dark:bg-neutral-900">
-                <img alt="Joyous Wedding Portrait"
-                    class="w-full grayscale hover:grayscale-0 transition-all duration-700 ease-in-out transform group-hover:scale-105 lazy-img"
-                    src="images/img7.webp" loading="lazy" decoding="async" width="3681" height="5522" />
-                <div
-                    class="overlay absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-500 flex flex-col justify-end p-8">
-                    <span class="text-[10px] uppercase tracking-[0.3em] text-gold mb-2">Wedding</span>
-                    <h3 class="font-display text-2xl text-white">Pure Joy</h3>
-                </div>
-            </div>
-            <div class="gallery-item relative overflow-hidden group cursor-pointer bg-neutral-200 dark:bg-neutral-900">
-                <img alt="Cinematography: Visual Story"
-                    class="w-full grayscale hover:grayscale-0 transition-all duration-700 ease-in-out transform group-hover:scale-105 lazy-img"
-                    src="images/img1.webp" loading="lazy" decoding="async" width="4000" height="6000" />
-                <div
-                    class="overlay absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-500 flex flex-col justify-end p-8">
-                    <span class="text-[10px] uppercase tracking-[0.3em] text-gold mb-2">Cinematography</span>
-                    <h3 class="font-display text-2xl text-white">Visual Story</h3>
-                </div>
-            </div>
-            <div class="gallery-item relative overflow-hidden group cursor-pointer bg-neutral-200 dark:bg-neutral-900">
-                <img alt="Professional Studio Session Portrait"
-                    class="w-full grayscale hover:grayscale-0 transition-all duration-700 ease-in-out transform group-hover:scale-105 lazy-img"
-                    src="images/img2.webp" loading="lazy" decoding="async" width="4000" height="6000" />
-                <div
-                    class="overlay absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-500 flex flex-col justify-end p-8">
-                    <span class="text-[10px] uppercase tracking-[0.3em] text-gold mb-2">Other</span>
-                    <h3 class="font-display text-2xl text-white">Studio Session</h3>
-                </div>
-            </div>
-            <div class="gallery-item relative overflow-hidden group cursor-pointer bg-neutral-200 dark:bg-neutral-900">
-                <img alt="Redefined Elegance Wedding Frame"
-                    class="w-full grayscale hover:grayscale-0 transition-all duration-700 ease-in-out transform group-hover:scale-105 lazy-img"
-                    src="images/img3.webp" loading="lazy" decoding="async" width="4000" height="6000" />
-                <div
-                    class="overlay absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-500 flex flex-col justify-end p-8">
-                    <span class="text-[10px] uppercase tracking-[0.3em] text-gold mb-2">Wedding</span>
-                    <h3 class="font-display text-2xl text-white">Elegance Redefined</h3>
-                </div>
-            </div>
-        </div>
-        <div class="mt-20 text-center">
-            <button id="load-more-btn"
-                class="px-10 py-4 border border-black/20 dark:border-white/20 text-[10px] uppercase tracking-[0.4em] hover:bg-white hover:text-black dark:hover:bg-white dark:hover:text-black transition-all">
-                Load More Masterpieces
-            </button>
-        </div>
-    </main>
-    <footer class="bg-stone-100 dark:bg-black py-20 px-6 border-t border-stone-200 dark:border-stone-900">
-        <div class="max-w-7xl mx-auto flex flex-col items-center">
-            <a href="index.html" class="mb-12">
-                <img alt="The Portrait House Logo" class="h-20 w-auto invert dark:invert-0 opacity-50"
-                    src="images/logo.png" width="938" height="1001" />
-            </a>
+    <main id="main-content">
+        <header class="pt-40 pb-20 px-6 text-center max-w-4xl mx-auto fade-in">
+            <h1 class="font-display text-5xl md:text-7xl font-light mb-6 italic tracking-tight">The Portrait House
+                Gallery
+            </h1>
+            <p
+                class="text-sm md:text-base text-slate-500 dark:text-slate-400 max-w-xl mx-auto font-light leading-relaxed tracking-wide">
+                A curated collection of visual narratives, capturing the essence of the human spirit through the lens of
+                sophisticated artistry.
+            </p>
+        </header>
+        <section class="max-w-7xl mx-auto px-6 mb-12">
             <div
-                class="grid grid-cols-1 md:grid-cols-3 gap-12 w-full text-center md:text-left border-b border-stone-200 dark:border-stone-800 pb-16">
-                <div>
-                    <h4 class="text-[10px] uppercase tracking-[0.3em] font-bold mb-6 text-primary">The Studio</h4>
-                    <p class="text-sm text-stone-600 dark:text-stone-400 font-light leading-relaxed">
-                        A/p Karad, Tal-Karad,<br />
-                        Dist-Satara, Maharashtra, 415110
-                    </p>
+                class="flex flex-wrap justify-center gap-8 md:gap-12 border-b border-black/5 dark:border-white/10 pb-6">
+                <button
+                    class="filter-btn active text-[10px] uppercase tracking-[0.4em] font-medium transition-all hover:text-gold">All
+                    Works</button>
+                <button
+                    class="filter-btn text-[10px] uppercase tracking-[0.4em] font-medium transition-all text-slate-500 hover:text-gold">Wedding</button>
+                <button
+                    class="filter-btn text-[10px] uppercase tracking-[0.4em] font-medium transition-all text-slate-500 hover:text-gold">Pre-Wedding</button>
+                <button
+                    class="filter-btn text-[10px] uppercase tracking-[0.4em] font-medium transition-all text-slate-500 hover:text-gold">Engagement</button>
+                <button
+                    class="filter-btn text-[10px] uppercase tracking-[0.4em] font-medium transition-all text-slate-500 hover:text-gold">Outdoor</button>
+                <button
+                    class="filter-btn text-[10px] uppercase tracking-[0.4em] font-medium transition-all text-slate-500 hover:text-gold">Cinematography</button>
+                <button
+                    class="filter-btn text-[10px] uppercase tracking-[0.4em] font-medium transition-all text-slate-500 hover:text-gold">Other</button>
+            </div>
+        </section>
+        <main class="max-w-7xl mx-auto px-6 pb-32">
+            <div class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+                <div
+                    class="gallery-item relative overflow-hidden group cursor-pointer bg-neutral-200 dark:bg-neutral-900">
+                    <img alt="Wedding Portrait: Eternal Bond"
+                        class="w-full grayscale hover:grayscale-0 transition-all duration-700 ease-in-out transform group-hover:scale-105 lazy-img"
+                        src="images/img1.webp" loading="lazy" decoding="async" width="4000" height="6000" />
+                    <div
+                        class="overlay absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-500 flex flex-col justify-end p-8">
+                        <span class="text-[10px] uppercase tracking-[0.3em] text-gold mb-2">Wedding</span>
+                        <h3 class="font-display text-2xl text-white">Eternal Bond</h3>
+                    </div>
                 </div>
-                <div>
-                    <h4 class="text-[10px] uppercase tracking-[0.3em] font-bold mb-6 text-primary">Contact</h4>
-                    <p class="text-sm text-stone-600 dark:text-stone-400 font-light leading-relaxed">
-                        +91 95112 36233<br />
-                        theportraithouse15@gmail.com
-                    </p>
+                <div
+                    class="gallery-item relative overflow-hidden group cursor-pointer bg-neutral-200 dark:bg-neutral-900">
+                    <img alt="Pre-Wedding Photography: Ethereal Light"
+                        class="w-full grayscale hover:grayscale-0 transition-all duration-700 ease-in-out transform group-hover:scale-105 lazy-img"
+                        src="images/img2.webp" loading="lazy" decoding="async" width="4000" height="6000" />
+                    <div
+                        class="overlay absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-500 flex flex-col justify-end p-8">
+                        <span class="text-[10px] uppercase tracking-[0.3em] text-gold mb-2">Pre-Wedding</span>
+                        <h3 class="font-display text-2xl text-white">Ethereal Light</h3>
+                    </div>
                 </div>
-                <div>
-                    <h4 class="text-[10px] uppercase tracking-[0.3em] font-bold mb-6 text-primary">Follow Information
-                    </h4>
-                    <div class="flex justify-center md:justify-start space-x-8 text-[10px] uppercase tracking-widest">
-                        <a class="hover:text-primary transition-colors" rel="noopener noreferrer" target="_blank"
-                            href="https://www.instagram.com/theportraithouse15/">Instagram</a>
+                <div
+                    class="gallery-item relative overflow-hidden group cursor-pointer bg-neutral-200 dark:bg-neutral-900">
+                    <img alt="Engagement Portrait: Forever Begins"
+                        class="w-full grayscale hover:grayscale-0 transition-all duration-700 ease-in-out transform group-hover:scale-105 lazy-img"
+                        src="images/img3.webp" loading="lazy" decoding="async" width="4000" height="6000" />
+                    <div
+                        class="overlay absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-500 flex flex-col justify-end p-8">
+                        <span class="text-[10px] uppercase tracking-[0.3em] text-gold mb-2">Engagement</span>
+                        <h3 class="font-display text-2xl text-white">Forever Begins</h3>
+                    </div>
+                </div>
+                <div
+                    class="gallery-item relative overflow-hidden group cursor-pointer bg-neutral-200 dark:bg-neutral-900">
+                    <img alt="Outdoor Portrait: Golden Silhouette"
+                        class="w-full grayscale hover:grayscale-0 transition-all duration-700 ease-in-out transform group-hover:scale-105 lazy-img"
+                        src="images/img4.webp" loading="lazy" decoding="async" width="3681" height="5522" />
+                    <div
+                        class="overlay absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-500 flex flex-col justify-end p-8">
+                        <span class="text-[10px] uppercase tracking-[0.3em] text-gold mb-2">Outdoor</span>
+                        <h3 class="font-display text-2xl text-white">Golden Silhouette</h3>
+                    </div>
+                </div>
+                <div
+                    class="gallery-item relative overflow-hidden group cursor-pointer bg-neutral-200 dark:bg-neutral-900">
+                    <img alt="Cinematography: The Story"
+                        class="w-full grayscale hover:grayscale-0 transition-all duration-700 ease-in-out transform group-hover:scale-105 lazy-img"
+                        src="images/img5.webp" loading="lazy" decoding="async" width="4000" height="6000" />
+                    <div
+                        class="overlay absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-500 flex flex-col justify-end p-8">
+                        <span class="text-[10px] uppercase tracking-[0.3em] text-gold mb-2">Cinematography</span>
+                        <h3 class="font-display text-2xl text-white">The Story</h3>
+                    </div>
+                </div>
+                <div
+                    class="gallery-item relative overflow-hidden group cursor-pointer bg-neutral-200 dark:bg-neutral-900">
+                    <img alt="Other: The Visionary"
+                        class="w-full grayscale hover:grayscale-0 transition-all duration-700 ease-in-out transform group-hover:scale-105 lazy-img"
+                        src="images/img6.webp" loading="lazy" decoding="async" width="4000" height="6000" />
+                    <div
+                        class="overlay absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-500 flex flex-col justify-end p-8">
+                        <span class="text-[10px] uppercase tracking-[0.3em] text-gold mb-2">Other</span>
+                        <h3 class="font-display text-2xl text-white">The Visionary</h3>
+                    </div>
+                </div>
+                <div
+                    class="gallery-item relative overflow-hidden group cursor-pointer bg-neutral-200 dark:bg-neutral-900">
+                    <img alt="Pre-Wedding: Grace"
+                        class="w-full grayscale hover:grayscale-0 transition-all duration-700 ease-in-out transform group-hover:scale-105 lazy-img"
+                        src="images/img7.webp" loading="lazy" decoding="async" width="3681" height="5522" />
+                    <div
+                        class="overlay absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-500 flex flex-col justify-end p-8">
+                        <span class="text-[10px] uppercase tracking-[0.3em] text-gold mb-2">Pre-Wedding</span>
+                        <h3 class="font-display text-2xl text-white">Urban Grace</h3>
+                    </div>
+                </div>
+                <div
+                    class="gallery-item relative overflow-hidden group cursor-pointer bg-neutral-200 dark:bg-neutral-900">
+                    <img alt="Engagement: Sweet Moments"
+                        class="w-full grayscale hover:grayscale-0 transition-all duration-700 ease-in-out transform group-hover:scale-105 lazy-img"
+                        src="images/img1.webp" loading="lazy" decoding="async" width="4000" height="6000" />
+                    <div
+                        class="overlay absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-500 flex flex-col justify-end p-8">
+                        <span class="text-[10px] uppercase tracking-[0.3em] text-gold mb-2">Engagement</span>
+                        <h3 class="font-display text-2xl text-white">Sweet Moments</h3>
+                    </div>
+                </div>
+                <div
+                    class="gallery-item relative overflow-hidden group cursor-pointer bg-neutral-200 dark:bg-neutral-900">
+                    <img alt="Outdoor Portrait: Golden Hour"
+                        class="w-full grayscale hover:grayscale-0 transition-all duration-700 ease-in-out transform group-hover:scale-105 lazy-img"
+                        src="images/img1.webp" loading="lazy" decoding="async" width="4000" height="6000" />
+                    <div
+                        class="overlay absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-500 flex flex-col justify-end p-8">
+                        <span class="text-[10px] uppercase tracking-[0.3em] text-gold mb-2">Outdoor</span>
+                        <h3 class="font-display text-2xl text-white">Golden Hour</h3>
+                    </div>
+                </div>
+                <div
+                    class="gallery-item relative overflow-hidden group cursor-pointer bg-neutral-200 dark:bg-neutral-900">
+                    <img alt="Wedding Story: The Vow"
+                        class="w-full grayscale hover:grayscale-0 transition-all duration-700 ease-in-out transform group-hover:scale-105 lazy-img"
+                        src="images/img2.webp" loading="lazy" decoding="async" width="4000" height="6000" />
+                    <div
+                        class="overlay absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-500 flex flex-col justify-end p-8">
+                        <span class="text-[10px] uppercase tracking-[0.3em] text-gold mb-2">Wedding</span>
+                        <h3 class="font-display text-2xl text-white">The Vow</h3>
+                    </div>
+                </div>
+                <div
+                    class="gallery-item relative overflow-hidden group cursor-pointer bg-neutral-200 dark:bg-neutral-900">
+                    <img alt="Pre-Wedding Portrait: Classic Elegance"
+                        class="w-full grayscale hover:grayscale-0 transition-all duration-700 ease-in-out transform group-hover:scale-105 lazy-img"
+                        src="images/img3.webp" loading="lazy" decoding="async" width="4000" height="6000" />
+                    <div
+                        class="overlay absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-500 flex flex-col justify-end p-8">
+                        <span class="text-[10px] uppercase tracking-[0.3em] text-gold mb-2">Pre-Wedding</span>
+                        <h3 class="font-display text-2xl text-white">Classic Elegance</h3>
+                    </div>
+                </div>
+                <div
+                    class="gallery-item relative overflow-hidden group cursor-pointer bg-neutral-200 dark:bg-neutral-900">
+                    <img alt="Engagement Celebration: The Ring"
+                        class="w-full grayscale hover:grayscale-0 transition-all duration-700 ease-in-out transform group-hover:scale-105 lazy-img"
+                        src="images/img4.webp" loading="lazy" decoding="async" width="3681" height="5522" />
+                    <div
+                        class="overlay absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-500 flex flex-col justify-end p-8">
+                        <span class="text-[10px] uppercase tracking-[0.3em] text-gold mb-2">Engagement</span>
+                        <h3 class="font-display text-2xl text-white">The Ring</h3>
+                    </div>
+                </div>
+                <div
+                    class="gallery-item relative overflow-hidden group cursor-pointer bg-neutral-200 dark:bg-neutral-900">
+                    <img alt="Cinematic Cinematography Frame"
+                        class="w-full grayscale hover:grayscale-0 transition-all duration-700 ease-in-out transform group-hover:scale-105 lazy-img"
+                        src="images/img5.webp" loading="lazy" decoding="async" width="4000" height="6000" />
+                    <div
+                        class="overlay absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-500 flex flex-col justify-end p-8">
+                        <span class="text-[10px] uppercase tracking-[0.3em] text-gold mb-2">Cinematography</span>
+                        <h3 class="font-display text-2xl text-white">Cinematic Frame</h3>
+                    </div>
+                </div>
+                <div
+                    class="gallery-item relative overflow-hidden group cursor-pointer bg-neutral-200 dark:bg-neutral-900">
+                    <img alt="Outdoor Street Photography: Urban"
+                        class="w-full grayscale hover:grayscale-0 transition-all duration-700 ease-in-out transform group-hover:scale-105 lazy-img"
+                        src="images/img6.webp" loading="lazy" decoding="async" width="4000" height="6000" />
+                    <div
+                        class="overlay absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-500 flex flex-col justify-end p-8">
+                        <span class="text-[10px] uppercase tracking-[0.3em] text-gold mb-2">Outdoor</span>
+                        <h3 class="font-display text-2xl text-white">Urban Adventure</h3>
+                    </div>
+                </div>
+                <div
+                    class="gallery-item relative overflow-hidden group cursor-pointer bg-neutral-200 dark:bg-neutral-900">
+                    <img alt="Joyous Wedding Portrait"
+                        class="w-full grayscale hover:grayscale-0 transition-all duration-700 ease-in-out transform group-hover:scale-105 lazy-img"
+                        src="images/img7.webp" loading="lazy" decoding="async" width="3681" height="5522" />
+                    <div
+                        class="overlay absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-500 flex flex-col justify-end p-8">
+                        <span class="text-[10px] uppercase tracking-[0.3em] text-gold mb-2">Wedding</span>
+                        <h3 class="font-display text-2xl text-white">Pure Joy</h3>
+                    </div>
+                </div>
+                <div
+                    class="gallery-item relative overflow-hidden group cursor-pointer bg-neutral-200 dark:bg-neutral-900">
+                    <img alt="Cinematography: Visual Story"
+                        class="w-full grayscale hover:grayscale-0 transition-all duration-700 ease-in-out transform group-hover:scale-105 lazy-img"
+                        src="images/img1.webp" loading="lazy" decoding="async" width="4000" height="6000" />
+                    <div
+                        class="overlay absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-500 flex flex-col justify-end p-8">
+                        <span class="text-[10px] uppercase tracking-[0.3em] text-gold mb-2">Cinematography</span>
+                        <h3 class="font-display text-2xl text-white">Visual Story</h3>
+                    </div>
+                </div>
+                <div
+                    class="gallery-item relative overflow-hidden group cursor-pointer bg-neutral-200 dark:bg-neutral-900">
+                    <img alt="Professional Studio Session Portrait"
+                        class="w-full grayscale hover:grayscale-0 transition-all duration-700 ease-in-out transform group-hover:scale-105 lazy-img"
+                        src="images/img2.webp" loading="lazy" decoding="async" width="4000" height="6000" />
+                    <div
+                        class="overlay absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-500 flex flex-col justify-end p-8">
+                        <span class="text-[10px] uppercase tracking-[0.3em] text-gold mb-2">Other</span>
+                        <h3 class="font-display text-2xl text-white">Studio Session</h3>
+                    </div>
+                </div>
+                <div
+                    class="gallery-item relative overflow-hidden group cursor-pointer bg-neutral-200 dark:bg-neutral-900">
+                    <img alt="Redefined Elegance Wedding Frame"
+                        class="w-full grayscale hover:grayscale-0 transition-all duration-700 ease-in-out transform group-hover:scale-105 lazy-img"
+                        src="images/img3.webp" loading="lazy" decoding="async" width="4000" height="6000" />
+                    <div
+                        class="overlay absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-500 flex flex-col justify-end p-8">
+                        <span class="text-[10px] uppercase tracking-[0.3em] text-gold mb-2">Wedding</span>
+                        <h3 class="font-display text-2xl text-white">Elegance Redefined</h3>
                     </div>
                 </div>
             </div>
-            <div
-                class="mt-12 text-[10px] tracking-[0.2em] text-stone-500 uppercase flex flex-col items-center space-y-2">
-                <p>© <span class="current-year">2026</span> THE PORTRAIT HOUSE. ALL RIGHTS RESERVED.</p>
-                <p class="opacity-50">DEVELOPED BY CHAARTECH TECHNOLOGIES PVT. LTD</p>
+            <div class="mt-20 text-center">
+                <button id="load-more-btn"
+                    class="px-10 py-4 border border-black/20 dark:border-white/20 text-[10px] uppercase tracking-[0.4em] hover:bg-white hover:text-black dark:hover:bg-white dark:hover:text-black transition-all">
+                    Load More Masterpieces
+                </button>
             </div>
-        </div>
-    </footer>
+        </main>
+        <footer class="bg-stone-100 dark:bg-black py-20 px-6 border-t border-stone-200 dark:border-stone-900">
+            <div class="max-w-7xl mx-auto flex flex-col items-center">
+                <a href="index.html" class="mb-12">
+                    <img alt="The Portrait House Logo" class="h-20 w-auto invert dark:invert-0 opacity-50"
+                        src="images/logo.png" width="938" height="1001" />
+                </a>
+                <div
+                    class="grid grid-cols-1 md:grid-cols-3 gap-12 w-full text-center md:text-left border-b border-stone-200 dark:border-stone-800 pb-16">
+                    <div>
+                        <h4 class="text-[10px] uppercase tracking-[0.3em] font-bold mb-6 text-primary">The Studio</h4>
+                        <p class="text-sm text-stone-600 dark:text-stone-400 font-light leading-relaxed">
+                            A/p Karad, Tal-Karad,<br />
+                            Dist-Satara, Maharashtra, 415110
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="text-[10px] uppercase tracking-[0.3em] font-bold mb-6 text-primary">Contact</h4>
+                        <p class="text-sm text-stone-600 dark:text-stone-400 font-light leading-relaxed">
+                            +91 95112 36233<br />
+                            theportraithouse15@gmail.com
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="text-[10px] uppercase tracking-[0.3em] font-bold mb-6 text-primary">Follow
+                            Information
+                        </h4>
+                        <div
+                            class="flex justify-center md:justify-start space-x-8 text-[10px] uppercase tracking-widest">
+                            <a class="hover:text-primary transition-colors" rel="noopener noreferrer" target="_blank"
+                                href="https://www.instagram.com/theportraithouse15/">Instagram</a>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="mt-12 text-[10px] tracking-[0.2em] text-stone-500 uppercase flex flex-col items-center space-y-2">
+                    <p>© <span class="current-year">2026</span> THE PORTRAIT HOUSE. ALL RIGHTS RESERVED.</p>
+                    <p class="opacity-50">DEVELOPED BY CHAARTECH TECHNOLOGIES PVT. LTD</p>
+                </div>
+            </div>
+        </footer>
 
 </body>
 

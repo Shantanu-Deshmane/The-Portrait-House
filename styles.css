@@ -57,7 +57,7 @@
 }
 
 .filter-btn.active {
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid currentColor;
 }
 
 /* Custom Scrollbar */
@@ -122,8 +122,43 @@ select {
     filter: invert(0);
 }
 
-.filter-btn.active {
-    border-bottom: 2px solid currentColor;
+/* Mobile Menu Styling Fix - Improved Contrast */
+.mobile-nav-links a {
+    color: #1a1a1a;
+}
+
+.dark .mobile-nav-links a {
+    color: #f5f5f5;
+}
+
+.mobile-nav-links a:hover {
+    color: #C5A059;
+}
+
+/* Dark Mode Mobile Menu - Solid Black Background */
+.dark #mobile-menu {
+    background: #0a0a0a !important;
+}
+
+/* Light Mode Mobile Menu - Solid White Background */
+#mobile-menu {
+    background: #ffffff !important;
+}
+
+/* Mobile Menu Header - Better visibility */
+#mobile-menu .p-6 img {
+    opacity: 1;
+}
+
+/* Book a Session button in mobile menu */
+.mobile-nav-links a[href="ContactUs.html"] {
+    border-color: rgba(0, 0, 0, 0.4);
+    color: #1a1a1a;
+}
+
+.dark .mobile-nav-links a[href="ContactUs.html"] {
+    border-color: rgba(255, 255, 255, 0.4);
+    color: #f5f5f5;
 }
 
 /* Active Nav Link Styling */
@@ -209,96 +244,6 @@ select {
     transition: transform 0.5s ease-out;
 }
 
-/* Counter Animation Styles */
-.counter {
-    display: inline-block;
-    min-width: 80px;
-    background: linear-gradient(135deg, currentColor 0%, currentColor 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-}
-
-.counter.counting {
-    animation: pulse-glow 0.1s ease-in-out;
-}
-
-@keyframes pulse-glow {
-
-    0%,
-    100% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0.8;
-    }
-}
-
-/* Smooth number transition */
-.counter-wrapper {
-    overflow: hidden;
-}
-
-/* Additional scroll reveal animations */
-.scroll-animate.animate-blur-in {
-    filter: blur(10px);
-    transform: scale(1.05);
-}
-
-.scroll-animate.animate-blur-in.visible {
-    filter: blur(0);
-}
-
-.scroll-animate.animate-rotate-in {
-    transform: rotate(-5deg) scale(0.95);
-}
-
-.scroll-animate.animate-rotate-in.visible {
-    transform: rotate(0) scale(1);
-}
-
-/* Floating animation for decorative elements */
-@keyframes float {
-
-    0%,
-    100% {
-        transform: translateY(0px);
-    }
-
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
-.animate-float {
-    animation: float 3s ease-in-out infinite;
-}
-
-/* Subtle parallax on scroll */
-.parallax-element {
-    will-change: transform;
-    transition: transform 0.3s ease-out;
-}
-
-/* Shine effect for counters */
-@keyframes shine {
-    0% {
-        background-position: -200% center;
-    }
-
-    100% {
-        background-position: 200% center;
-    }
-}
-
-.counter.counted {
-    background: linear-gradient(90deg, currentColor 40%, #C5A059 50%, currentColor 60%);
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    background-clip: text;
-    animation: shine 2s ease-in-out;
-}
-
 /* Success Modal */
 .success-modal {
     position: fixed;
@@ -355,8 +300,110 @@ select {
 
 .error-message {
     color: #ef4444;
-    font-size: 10px;
+    font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     margin-top: 4px;
+}
+
+/* ================================================
+   HIGH PRIORITY: Mobile & Accessibility Improvements
+   ================================================ */
+
+/* Mobile-friendly font sizes (min 12px) */
+@media (max-width: 767px) {
+
+    /* Gallery filter buttons - improved touch targets */
+    .filter-btn {
+        font-size: 11px !important;
+        padding: 8px 12px;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    /* Responsive heading for AboutUs page */
+    .font-display.text-6xl {
+        font-size: 2.25rem !important;
+        line-height: 1.2;
+    }
+
+    /* Form labels minimum size */
+    label {
+        font-size: 11px !important;
+    }
+
+    /* Footer text improvements */
+    footer .text-\[10px\] {
+        font-size: 11px !important;
+    }
+
+    /* Mobile success modal */
+    .success-modal .modal-content {
+        margin: 1rem;
+        padding: 2rem;
+    }
+}
+
+/* Accessibility: Focus visible styles */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 2px solid #C5A059;
+    outline-offset: 2px;
+}
+
+/* Skip to content link for screen readers */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #C5A059;
+    color: black;
+    padding: 8px 16px;
+    z-index: 1000;
+    font-size: 14px;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Improved contrast for footer text */
+footer .text-stone-500 {
+    color: #78716c;
+}
+
+.dark footer .text-stone-500 {
+    color: #a8a29e;
+}
+
+/* Form button loading state */
+.btn-loading {
+    position: relative;
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+.btn-loading::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    left: 50%;
+    margin-left: -8px;
+    margin-top: -8px;
+    border: 2px solid transparent;
+    border-top-color: currentColor;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
 }

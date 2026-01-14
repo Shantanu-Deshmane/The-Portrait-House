@@ -15,7 +15,6 @@ module.exports = {
         display: ["Playfair Display", "serif"],
         sans: ["Montserrat", "sans-serif"],
         editorial: ["Cormorant Garamond", "serif"],
-        inter: ["Inter", "sans-serif"],
       },
       borderRadius: {
         DEFAULT: "0px",

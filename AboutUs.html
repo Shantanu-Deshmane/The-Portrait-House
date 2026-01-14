@@ -59,8 +59,9 @@
 
 <body
     class="bg-background-light dark:bg-background-dark text-stone-900 dark:text-stone-100 antialiased overflow-x-hidden">
-    <nav
-        class="fixed top-0 w-full z-50 bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-stone-200 dark:border-stone-800">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-stone-200 dark:border-stone-800"
+        role="navigation" aria-label="Main navigation">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <a href="index.html" class="flex items-center">
                 <img alt="The Portrait House Logo" class="h-12 w-auto invert dark:invert-0" src="images/logo.png"
@@ -76,10 +77,11 @@
             <div class="flex items-center space-x-6 hover-effect">
                 <button
                     class="p-2 hover:bg-stone-100 dark:hover:bg-stone-900 rounded-full transition-colors theme-toggle-btn"
-                    id="mode-toggle">
+                    id="mode-toggle" aria-label="Toggle dark mode">
                     <span class="material-icons-outlined">dark_mode</span>
                 </button>
-                <button class="md:hidden p-2 text-stone-800 dark:text-stone-200" id="mobile-menu-btn">
+                <button class="md:hidden p-2 text-stone-800 dark:text-stone-200" id="mobile-menu-btn"
+                    aria-label="Open menu">
                     <span class="material-icons-outlined text-2xl">menu</span>
                 </button>
                 <a class="hidden md:block border border-stone-900 dark:border-white px-8 py-3 text-[10px] tracking-[0.2em] uppercase hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all"
@@ -97,7 +99,7 @@
                 <img alt="The Portrait House Logo" class="h-8 w-auto invert dark:invert-0" src="images/logo.png"
                     width="938" height="1001" />
             </a>
-            <button id="close-menu-btn" class="p-2 text-stone-800 dark:text-stone-200">
+            <button id="close-menu-btn" class="p-2 text-stone-800 dark:text-stone-200" aria-label="Close menu">
                 <span class="material-icons-outlined text-3xl">close</span>
             </button>
         </div>
@@ -131,119 +133,127 @@
                 href="ContactUs.html">Book a Session</a>
         </div>
     </div>
-    <header class="pt-40 pb-20 px-8 md:px-24 max-w-7xl mx-auto">
-        <div class="grid md:grid-cols-12 gap-12 items-end">
-            <div class="md:col-span-7">
-                <span class="silver-text font-display italic text-xl md:text-2xl mb-4 block">Capturing the Soul</span>
-                <h1 class="text-6xl md:text-8xl leading-tight mb-8">The Art of the <br />Permanent Moment.</h1>
-                <p class="text-lg md:text-xl font-light leading-relaxed text-stone-600 dark:text-stone-400 max-w-xl">
-                    Founded on the principles of timeless elegance and emotional resonance, The Portrait House is a
-                    sanctuary for those who value legacy over trends.
-                </p>
-            </div>
-            <div class="md:col-span-5 relative">
-                <div class="aspect-[4/5] overflow-hidden image-container">
-                    <img alt="High-end professional portrait camera equipment in studio"
-                        class="w-full h-full object-cover image-reveal lazy-img" src="images/img3.webp" loading="lazy"
-                        decoding="async" width="4000" height="6000" />
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <section class="py-32 px-8 md:px-24 bg-stone-50 dark:bg-stone-900/30">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-24 items-center">
-            <div class="relative scroll-animate animate-scale-up">
-                <div class="aspect-[3/4] overflow-hidden rounded-lg shadow-xl">
-                    <img alt="Professional monochrome photography studio lighting setup"
-                        class="w-full h-full object-cover grayscale lazy-img" src="images/img4.webp" loading="lazy"
-                        decoding="async" width="3681" height="5522" />
-                </div>
-                <div
-                    class="absolute -bottom-8 -right-8 w-48 h-64 hidden md:block border-4 border-white dark:border-zinc-900 overflow-hidden shadow-2xl rounded-lg z-10 transition-transform hover:scale-105 duration-500">
-                    <img alt="Detailed close-up of a high-quality luxury portrait print"
-                        class="w-full h-full object-cover lazy-img" src="images/img1.webp" loading="lazy"
-                        decoding="async" width="4000" height="6000" />
-                </div>
-            </div>
-            <div class="space-y-12">
-                <div>
-                    <h2 class="font-display text-4xl md:text-5xl mb-8 italic">The Studio Philosophy</h2>
-                    <div class="w-20 h-px bg-stone-300 mb-8"></div>
-                    <p class="text-lg text-stone-600 dark:text-stone-400 leading-relaxed mb-6">
-                        In an era of disposable images, we believe in the power of the printed portrait. Our process is
-                        one of slow discovery, where we strip away the surface to reveal the character beneath.
-                    </p>
-                    <p class="text-lg text-stone-600 dark:text-stone-400 leading-relaxed">
-                        We don't just take pictures; we create heirlooms. Every shadow is deliberate, every light source
-                        is intentional, and every subject is treated with the reverence they deserve.
+    <main id="main-content">
+        <header class="pt-40 pb-20 px-8 md:px-24 max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-12 gap-12 items-end">
+                <div class="md:col-span-7">
+                    <span class="silver-text font-display italic text-xl md:text-2xl mb-4 block">Capturing the
+                        Soul</span>
+                    <h1 class="text-6xl md:text-8xl leading-tight mb-8">The Art of the <br />Permanent Moment.</h1>
+                    <p
+                        class="text-lg md:text-xl font-light leading-relaxed text-stone-600 dark:text-stone-400 max-w-xl">
+                        Founded on the principles of timeless elegance and emotional resonance, The Portrait House is a
+                        sanctuary for those who value legacy over trends.
                     </p>
                 </div>
-                <div class="grid grid-cols-2 gap-8 pt-8 scroll-animate animate-fade-up delay-200">
-                    <div class="text-center md:text-left">
-                        <span class="text-4xl font-display italic block mb-2">5+</span>
-                        <span class="text-[10px] uppercase tracking-widest text-stone-500">Years of Artistry</span>
-                    </div>
-                    <div class="text-center md:text-left">
-                        <span class="text-4xl font-display italic block mb-2">5k</span>
-                        <span class="text-[10px] uppercase tracking-widest text-stone-500">Portraits Captured</span>
+                <div class="md:col-span-5 relative">
+                    <div class="aspect-[4/5] overflow-hidden image-container">
+                        <img alt="High-end professional portrait camera equipment in studio"
+                            class="w-full h-full object-cover image-reveal lazy-img" src="images/img3.webp"
+                            loading="lazy" decoding="async" width="4000" height="6000" />
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </header>
 
-    <section class="py-32 px-8 md:px-24 max-w-7xl mx-auto relative overflow-hidden">
-        <div class="grid md:grid-cols-2 gap-16 items-center">
-            <div class="z-10 scroll-animate animate-fade-right">
-                <span class="text-primary tracking-[0.4em] uppercase text-xs font-semibold mb-6 block">Our Craft</span>
-                <h2 class="text-5xl md:text-7xl mb-12">The Monochrome <br />Mastery.</h2>
+        <section class="py-32 px-8 md:px-24 bg-stone-50 dark:bg-stone-900/30">
+            <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-24 items-center">
+                <div class="relative scroll-animate animate-scale-up">
+                    <div class="aspect-[3/4] overflow-hidden rounded-lg shadow-xl">
+                        <img alt="Professional monochrome photography studio lighting setup"
+                            class="w-full h-full object-cover grayscale lazy-img" src="images/img4.webp" loading="lazy"
+                            decoding="async" width="3681" height="5522" />
+                    </div>
+                    <div
+                        class="absolute -bottom-8 -right-8 w-48 h-64 hidden md:block border-4 border-white dark:border-zinc-900 overflow-hidden shadow-2xl rounded-lg z-10 transition-transform hover:scale-105 duration-500">
+                        <img alt="Detailed close-up of a high-quality luxury portrait print"
+                            class="w-full h-full object-cover lazy-img" src="images/img1.webp" loading="lazy"
+                            decoding="async" width="4000" height="6000" />
+                    </div>
+                </div>
                 <div class="space-y-12">
-                    <div class="flex gap-6 scroll-animate animate-fade-up delay-100">
-                        <span class="text-stone-300 font-display text-2xl">01</span>
-                        <div>
-                            <h3 class="text-xl mb-4 font-medium">Perfect Lighting</h3>
-                            <p class="text-stone-500 leading-relaxed">Using classic Rembrandt and butterfly lighting
-                                techniques to create depth and dimension.</p>
-                        </div>
+                    <div>
+                        <h2 class="font-display text-4xl md:text-5xl mb-8 italic">The Studio Philosophy</h2>
+                        <div class="w-20 h-px bg-stone-300 mb-8"></div>
+                        <p class="text-lg text-stone-600 dark:text-stone-400 leading-relaxed mb-6">
+                            In an era of disposable images, we believe in the power of the printed portrait. Our process
+                            is
+                            one of slow discovery, where we strip away the surface to reveal the character beneath.
+                        </p>
+                        <p class="text-lg text-stone-600 dark:text-stone-400 leading-relaxed">
+                            We don't just take pictures; we create heirlooms. Every shadow is deliberate, every light
+                            source
+                            is intentional, and every subject is treated with the reverence they deserve.
+                        </p>
                     </div>
-                    <div class="flex gap-6 scroll-animate animate-fade-up delay-200">
-                        <span class="text-stone-300 font-display text-2xl">02</span>
-                        <div>
-                            <h3 class="text-xl mb-4 font-medium">Authentic Connection</h3>
-                            <p class="text-stone-500 leading-relaxed">Our sessions are conversation-led, ensuring you
-                                feel at ease and your true self shines through.</p>
+                    <div class="grid grid-cols-2 gap-8 pt-8 scroll-animate animate-fade-up delay-200">
+                        <div class="text-center md:text-left">
+                            <span class="text-4xl font-display italic block mb-2">5+</span>
+                            <span class="text-[10px] uppercase tracking-widest text-stone-500">Years of Artistry</span>
                         </div>
-                    </div>
-                    <div class="flex gap-6 scroll-animate animate-fade-up delay-300">
-                        <span class="text-stone-300 font-display text-2xl">03</span>
-                        <div>
-                            <h3 class="text-xl mb-4 font-medium">Fine Art Finish</h3>
-                            <p class="text-stone-500 leading-relaxed">Individualized post-production that emphasizes
-                                texture, detail, and tonal range.</p>
+                        <div class="text-center md:text-left">
+                            <span class="text-4xl font-display italic block mb-2">5k</span>
+                            <span class="text-[10px] uppercase tracking-widest text-stone-500">Portraits Captured</span>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="relative h-[600px] md:h-[800px] scroll-animate animate-scale-up">
-                <img alt="Premium monochrome portrait highlighting intimate facial textures"
-                    class="w-full h-full object-cover grayscale lazy-img" src="images/img5.webp" loading="lazy"
-                    decoding="async" width="4000" height="6000" />
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="py-32 px-8 text-center bg-background-light dark:bg-background-dark">
-        <div class="max-w-2xl mx-auto">
-            <h2 class="text-4xl md:text-6xl mb-8 font-display italic">Your legacy begins with a single frame.</h2>
-            <p class="text-lg text-stone-500 mb-12">Join us in the studio for an experience that transcends the
-                ordinary.</p>
-            <a href="ContactUs.html"
-                class="inline-block bg-stone-900 dark:bg-white text-white dark:text-black px-12 py-5 text-xs tracking-widest uppercase hover:bg-primary dark:hover:bg-primary transition-colors">
-                Book Your Experience
-            </a>
-        </div>
-    </section>
+        <section class="py-32 px-8 md:px-24 max-w-7xl mx-auto relative overflow-hidden">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="z-10 scroll-animate animate-fade-right">
+                    <span class="text-primary tracking-[0.4em] uppercase text-xs font-semibold mb-6 block">Our
+                        Craft</span>
+                    <h2 class="text-5xl md:text-7xl mb-12">The Monochrome <br />Mastery.</h2>
+                    <div class="space-y-12">
+                        <div class="flex gap-6 scroll-animate animate-fade-up delay-100">
+                            <span class="text-stone-300 font-display text-2xl">01</span>
+                            <div>
+                                <h3 class="text-xl mb-4 font-medium">Perfect Lighting</h3>
+                                <p class="text-stone-500 leading-relaxed">Using classic Rembrandt and butterfly lighting
+                                    techniques to create depth and dimension.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6 scroll-animate animate-fade-up delay-200">
+                            <span class="text-stone-300 font-display text-2xl">02</span>
+                            <div>
+                                <h3 class="text-xl mb-4 font-medium">Authentic Connection</h3>
+                                <p class="text-stone-500 leading-relaxed">Our sessions are conversation-led, ensuring
+                                    you
+                                    feel at ease and your true self shines through.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6 scroll-animate animate-fade-up delay-300">
+                            <span class="text-stone-300 font-display text-2xl">03</span>
+                            <div>
+                                <h3 class="text-xl mb-4 font-medium">Fine Art Finish</h3>
+                                <p class="text-stone-500 leading-relaxed">Individualized post-production that emphasizes
+                                    texture, detail, and tonal range.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative h-[600px] md:h-[800px] scroll-animate animate-scale-up">
+                    <img alt="Premium monochrome portrait highlighting intimate facial textures"
+                        class="w-full h-full object-cover grayscale lazy-img" src="images/img5.webp" loading="lazy"
+                        decoding="async" width="4000" height="6000" />
+                </div>
+            </div>
+        </section>
+
+        <section class="py-32 px-8 text-center bg-background-light dark:bg-background-dark">
+            <div class="max-w-2xl mx-auto">
+                <h2 class="text-4xl md:text-6xl mb-8 font-display italic">Your legacy begins with a single frame.</h2>
+                <p class="text-lg text-stone-500 mb-12">Join us in the studio for an experience that transcends the
+                    ordinary.</p>
+                <a href="ContactUs.html"
+                    class="inline-block bg-stone-900 dark:bg-white text-white dark:text-black px-12 py-5 text-xs tracking-widest uppercase hover:bg-primary dark:hover:bg-primary transition-colors">
+                    Book Your Experience
+                </a>
+            </div>
+        </section>
+    </main>
 
     <footer class="bg-stone-100 dark:bg-black py-20 px-6 border-t border-stone-200 dark:border-stone-900">
         <div class="max-w-7xl mx-auto flex flex-col items-center">
