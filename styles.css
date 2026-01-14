@@ -120,15 +120,153 @@ select {
 
 .dark .mobile-nav-watermark::before {
     filter: invert(0);
-    opacity: 0.05;
+}
 
-    /* Lazy Loading Fade-in */
-    .lazy-img {
-        opacity: 0;
-        transition: opacity 1s ease-in-out;
-    }
+.filter-btn.active {
+    border-bottom: 2px solid currentColor;
+}
 
-    .lazy-img.loaded {
-        opacity: 1;
-    }
+/* Active Nav Link Styling */
+.nav-link-active {
+    position: relative;
+    color: inherit;
+}
+
+.nav-link-active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #A0A0A0, #C5A059);
+}
+
+/* Lazy Loading Fade-in */
+.lazy-img {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.lazy-img.loaded {
+    opacity: 1;
+}
+
+/* Scroll Reveal Animations */
+.scroll-animate {
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-animate.animate-fade-up {
+    transform: translateY(40px);
+}
+
+.scroll-animate.animate-fade-left {
+    transform: translateX(-40px);
+}
+
+.scroll-animate.animate-fade-right {
+    transform: translateX(40px);
+}
+
+.scroll-animate.animate-scale-up {
+    transform: scale(0.9);
+}
+
+.scroll-animate.animate-fade-in {
+    transform: none;
+}
+
+.scroll-animate.visible {
+    opacity: 1;
+    transform: translateY(0) translateX(0) scale(1);
+}
+
+/* Stagger delays for list items */
+.scroll-animate.delay-100 {
+    transition-delay: 0.1s;
+}
+
+.scroll-animate.delay-200 {
+    transition-delay: 0.2s;
+}
+
+.scroll-animate.delay-300 {
+    transition-delay: 0.3s;
+}
+
+.scroll-animate.delay-400 {
+    transition-delay: 0.4s;
+}
+
+.scroll-animate.delay-500 {
+    transition-delay: 0.5s;
+}
+
+/* Parallax-like subtle movement */
+.parallax-slow {
+    transition: transform 0.5s ease-out;
+}
+
+/* Success Modal */
+.success-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.success-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.success-modal .modal-content {
+    background: white;
+    padding: 3rem;
+    text-align: center;
+    max-width: 400px;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.dark .success-modal .modal-content {
+    background: #1a1a1a;
+    color: white;
+}
+
+.success-modal.active .modal-content {
+    transform: scale(1);
+}
+
+.success-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #A0A0A0, #C5A059);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+/* Form validation styles */
+.form-error {
+    border-color: #ef4444 !important;
+}
+
+.error-message {
+    color: #ef4444;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 4px;
 }

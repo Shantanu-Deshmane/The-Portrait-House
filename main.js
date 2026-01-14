@@ -90,6 +90,7 @@ function initGallery() {
 
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
+            // Update button states
             filterBtns.forEach(b => {
                 b.classList.remove('active', 'text-slate-900', 'dark:text-white');
                 b.classList.add('text-slate-500');
@@ -97,52 +98,151 @@ function initGallery() {
             btn.classList.add('active', 'text-slate-900', 'dark:text-white');
             btn.classList.remove('text-slate-500');
 
+            // Get filter category from button text
+            const filterText = btn.innerText.trim().toLowerCase();
             const items = document.querySelectorAll('.gallery-item');
+
             items.forEach(item => {
-                item.style.opacity = '0';
-                setTimeout(() => { item.style.opacity = '1'; }, 100);
+                const categorySpan = item.querySelector('.overlay span');
+                const category = categorySpan ? categorySpan.innerText.trim().toLowerCase() : '';
+
+                // Check if should show this item
+                const shouldShow = filterText === 'all works' ||
+                    category.includes(filterText) ||
+                    filterText.includes(category);
+
+                if (shouldShow) {
+                    item.style.display = 'block';
+                    setTimeout(() => { item.style.opacity = '1'; }, 50);
+                } else {
+                    item.style.opacity = '0';
+                    setTimeout(() => { item.style.display = 'none'; }, 300);
+                }
             });
         });
     });
 }
 
-// WhatsApp Form Handling
+// Form Validation and WhatsApp Handling
+function validateEmail(email) {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+}
+
+function showSuccessModal() {
+    const modal = document.getElementById('success-modal');
+    if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeSuccessModal() {
+    const modal = document.getElementById('success-modal');
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
+
+function clearValidationErrors(form) {
+    form.querySelectorAll('.form-error').forEach(el => el.classList.remove('form-error'));
+    form.querySelectorAll('.error-message').forEach(el => el.remove());
+}
+
+function showFieldError(field, message) {
+    field.classList.add('form-error');
+    const errorDiv = document.createElement('div');
+    errorDiv.className = 'error-message';
+    errorDiv.textContent = message;
+    field.parentNode.appendChild(errorDiv);
+}
+
 function handleWhatsAppSubmit(formId) {
     const form = document.getElementById(formId);
     if (!form) return;
 
     form.addEventListener('submit', (e) => {
         e.preventDefault();
+        clearValidationErrors(form);
 
+        let isValid = true;
         const adminWhatsapp = "919511236233";
         let message = `*New Inquiry from The Portrait House*\n\n`;
 
         if (formId === 'contact-form') {
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const inquiry = document.getElementById('message').value;
+            const nameField = document.getElementById('name');
+            const emailField = document.getElementById('email');
+            const inquiryField = document.getElementById('message');
 
-            message += `*Name:* ${name}\n`;
-            message += `*Email:* ${email}\n`;
-            message += `*Inquiry:* ${inquiry}`;
+            if (!nameField.value.trim()) {
+                showFieldError(nameField, 'Please enter your name');
+                isValid = false;
+            }
+            if (!emailField.value.trim()) {
+                showFieldError(emailField, 'Please enter your email');
+                isValid = false;
+            } else if (!validateEmail(emailField.value)) {
+                showFieldError(emailField, 'Please enter a valid email');
+                isValid = false;
+            }
+            if (!inquiryField.value.trim()) {
+                showFieldError(inquiryField, 'Please enter your inquiry');
+                isValid = false;
+            }
+
+            if (isValid) {
+                message += `*Name:* ${nameField.value}\n`;
+                message += `*Email:* ${emailField.value}\n`;
+                message += `*Inquiry:* ${inquiryField.value}`;
+            }
         } else if (formId === 'full-contact-form') {
-            const name = document.getElementById('full-name').value;
-            const email = document.getElementById('full-email').value;
-            const type = document.getElementById('inquiry-type').value;
-            const date = document.getElementById('preferred-date').value;
-            const vision = document.getElementById('vision').value;
+            const nameField = document.getElementById('full-name');
+            const emailField = document.getElementById('full-email');
+            const typeField = document.getElementById('inquiry-type');
+            const dateField = document.getElementById('preferred-date');
+            const visionField = document.getElementById('vision');
 
-            message += `*Name:* ${name}\n`;
-            message += `*Email:* ${email}\n`;
-            message += `*Inquiry Type:* ${type}\n`;
-            message += `*Preferred Date:* ${date || 'Not specified'}\n`;
-            message += `*Vision:* ${vision}`;
+            if (!nameField.value.trim()) {
+                showFieldError(nameField, 'Please enter your name');
+                isValid = false;
+            }
+            if (!emailField.value.trim()) {
+                showFieldError(emailField, 'Please enter your email');
+                isValid = false;
+            } else if (!validateEmail(emailField.value)) {
+                showFieldError(emailField, 'Please enter a valid email');
+                isValid = false;
+            }
+            if (!visionField.value.trim()) {
+                showFieldError(visionField, 'Please describe your vision');
+                isValid = false;
+            }
+
+            if (isValid) {
+                message += `*Name:* ${nameField.value}\n`;
+                message += `*Email:* ${emailField.value}\n`;
+                message += `*Inquiry Type:* ${typeField.value}\n`;
+                message += `*Preferred Date:* ${dateField.value || 'Not specified'}\n`;
+                message += `*Vision:* ${visionField.value}`;
+            }
         }
 
-        const encodedMessage = encodeURIComponent(message);
-        window.open(`https://wa.me/${adminWhatsapp}?text=${encodedMessage}`, '_blank');
+        if (isValid) {
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/${adminWhatsapp}?text=${encodedMessage}`, '_blank');
+            showSuccessModal();
+            form.reset();
+        }
     });
 }
+
+// Close modal on backdrop click
+document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('success-modal')) {
+        closeSuccessModal();
+    }
+});
 
 // Mobile Menu Toggle
 function initMobileMenu() {
@@ -186,6 +286,76 @@ function initLazyImages() {
     });
 }
 
+// Animated Counter Numbers
+function initCounters() {
+    const counters = document.querySelectorAll('.counter');
+    if (!counters.length) return;
+
+    const animateCounter = (counter) => {
+        const target = parseInt(counter.dataset.count) || 0;
+        const suffix = counter.dataset.suffix || '';
+        const duration = 2000; // 2 seconds
+        const startTime = performance.now();
+
+        const formatNumber = (num) => {
+            if (num >= 1000) {
+                return (num / 1000).toFixed(num % 1000 === 0 ? 0 : 1) + 'k';
+            }
+            return num.toString();
+        };
+
+        const easeOutQuart = (t) => 1 - Math.pow(1 - t, 4);
+
+        const updateCounter = (currentTime) => {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const easedProgress = easeOutQuart(progress);
+            const currentValue = Math.floor(easedProgress * target);
+
+            counter.textContent = formatNumber(currentValue) + suffix;
+
+            if (progress < 1) {
+                requestAnimationFrame(updateCounter);
+            } else {
+                counter.textContent = formatNumber(target) + suffix;
+            }
+        };
+
+        requestAnimationFrame(updateCounter);
+    };
+
+    // Use Intersection Observer to trigger animation when visible
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+                entry.target.classList.add('counted');
+                animateCounter(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    counters.forEach(counter => observer.observe(counter));
+}
+
+// Scroll Reveal Animations
+function initScrollAnimations() {
+    const animatedElements = document.querySelectorAll('.scroll-animate');
+    if (!animatedElements.length) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    animatedElements.forEach(el => observer.observe(el));
+}
+
 // Initialize everything
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Initialize UI features directly
@@ -196,6 +366,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     try {
         initLazyImages();
+        initCounters();
+        initScrollAnimations();
     } catch (e) {
         console.error("Error initializing lazy images:", e);
     }
