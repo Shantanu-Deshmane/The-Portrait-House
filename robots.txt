@@ -1,4 +1,19 @@
+# Robots.txt for The Portrait House
+# IMPORTANT: Replace "yourdomain.com" with your actual domain name
+
+# Allow all search engine crawlers
 User-agent: *
 Allow: /
 
-Sitemap: https://theportraithouse.com/sitemap.xml
+# Block crawlers from accessing development/config files
+Disallow: /node_modules/
+Disallow: /*.json$
+Disallow: /tailwind.config.js
+Disallow: /package.json
+Disallow: /package-lock.json
+
+# Sitemap location (UPDATE THIS WITH YOUR DOMAIN)
+Sitemap: https://yourdomain.com/sitemap.xml
+
+# Crawl-delay for polite crawling (optional)
+Crawl-delay: 1

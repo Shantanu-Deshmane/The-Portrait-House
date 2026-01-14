@@ -209,6 +209,96 @@ select {
     transition: transform 0.5s ease-out;
 }
 
+/* Counter Animation Styles */
+.counter {
+    display: inline-block;
+    min-width: 80px;
+    background: linear-gradient(135deg, currentColor 0%, currentColor 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.counter.counting {
+    animation: pulse-glow 0.1s ease-in-out;
+}
+
+@keyframes pulse-glow {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+}
+
+/* Smooth number transition */
+.counter-wrapper {
+    overflow: hidden;
+}
+
+/* Additional scroll reveal animations */
+.scroll-animate.animate-blur-in {
+    filter: blur(10px);
+    transform: scale(1.05);
+}
+
+.scroll-animate.animate-blur-in.visible {
+    filter: blur(0);
+}
+
+.scroll-animate.animate-rotate-in {
+    transform: rotate(-5deg) scale(0.95);
+}
+
+.scroll-animate.animate-rotate-in.visible {
+    transform: rotate(0) scale(1);
+}
+
+/* Floating animation for decorative elements */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Subtle parallax on scroll */
+.parallax-element {
+    will-change: transform;
+    transition: transform 0.3s ease-out;
+}
+
+/* Shine effect for counters */
+@keyframes shine {
+    0% {
+        background-position: -200% center;
+    }
+
+    100% {
+        background-position: 200% center;
+    }
+}
+
+.counter.counted {
+    background: linear-gradient(90deg, currentColor 40%, #C5A059 50%, currentColor 60%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: shine 2s ease-in-out;
+}
+
 /* Success Modal */
 .success-modal {
     position: fixed;

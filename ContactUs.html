@@ -19,7 +19,7 @@
         content="Book your photography session with The Portrait House in Karad. Share your vision and let us capture your legacy." />
     <meta name="keywords"
         content="book photography session, contact studio, Karad photography contact, photography inquiry" />
-    <link rel="canonical" href="https://theportraithouse.com/ContactUs.html" />
+    <link rel="canonical" href="https://the-portrait-house.vercel.app/ContactUs.html" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -28,10 +28,13 @@
     <meta property="og:image" content="https://theportraithouse.com/images/img6.webp" />
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap"
+        rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&display=swap" rel="stylesheet" />
     <link rel="icon" type="image/png" href="images/logo.png" />
     <link rel="stylesheet" href="output.css">
-    <script src="main.js"></script>
+    <script src="main.js" defer></script>
 
     <!-- Breadcrumb Schema -->
     <script type="application/ld+json">
@@ -128,14 +131,14 @@
         </div>
     </div>
     <main class="max-w-7xl mx-auto px-6 py-16 md:py-24">
-        <header class="mb-16 md:mb-24 text-center">
+        <header class="mb-16 md:mb-24 text-center scroll-animate animate-fade-up">
             <h1 class="font-display text-5xl md:text-7xl mb-6 tracking-tight">Begin Your Story</h1>
             <p class="max-w-2xl mx-auto text-gray-500 dark:text-gray-400 text-lg leading-relaxed font-light">
                 Every portrait is a collaboration. We invite you to reach out and share your vision with us.
             </p>
         </header>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32">
-            <section>
+            <section class="scroll-animate animate-fade-right">
                 <h2 class="font-display text-3xl mb-8 border-b border-gray-100 dark:border-studio-grey pb-4">Booking
                     Inquiry</h2>
                 <form id="full-contact-form" class="space-y-8">
@@ -160,13 +163,13 @@
                             <label class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">Inquiry
                                 Type</label>
                             <select id="inquiry-type"
-                                class="w-full bg-transparent border-0 border-b border-gray-300 dark:border-studio-grey focus:ring-0 focus:border-primary px-0 py-2 transition-colors">
-                                <option>Wedding Photography</option>
-                                <option>Pre-Wedding</option>
-                                <option>Engagement</option>
-                                <option>Outdoor Photography</option>
-                                <option>Cinematography</option>
-                                <option>Other</option>
+                                class="w-full bg-transparent border-0 border-b border-gray-300 dark:border-studio-grey focus:ring-0 focus:border-primary px-0 py-2 transition-colors dark:text-white dark:bg-background-dark">
+                                <option class="dark:bg-zinc-900 dark:text-white">Wedding Photography</option>
+                                <option class="dark:bg-zinc-900 dark:text-white">Pre-Wedding</option>
+                                <option class="dark:bg-zinc-900 dark:text-white">Engagement</option>
+                                <option class="dark:bg-zinc-900 dark:text-white">Outdoor Photography</option>
+                                <option class="dark:bg-zinc-900 dark:text-white">Cinematography</option>
+                                <option class="dark:bg-zinc-900 dark:text-white">Other</option>
                             </select>
                         </div>
                         <div class="space-y-2">
@@ -191,7 +194,7 @@
                     </button>
                 </form>
             </section>
-            <section class="space-y-16">
+            <section class="space-y-16 scroll-animate animate-fade-left">
                 <div>
                     <h2 class="font-display text-3xl mb-8 border-b border-gray-100 dark:border-studio-grey pb-4">The
                         Studio</h2>
@@ -358,9 +361,8 @@
                     <h4 class="text-[10px] uppercase tracking-[0.3em] font-bold mb-6 text-primary">Follow Information
                     </h4>
                     <div class="flex justify-center md:justify-start space-x-8 text-[10px] uppercase tracking-widest">
-                        <a class="hover:text-primary transition-colors"
-                            href="https://www.instagram.com/p/DTdOQCdiO8t/?igsh=MWRlemRrNDN2bm9kdw==">Instagram</a>
-                        <a class="hover:text-primary transition-colors" href="#">Pinterest</a>
+                        <a class="hover:text-primary transition-colors" rel="noopener noreferrer" target="_blank"
+                            href="https://www.instagram.com/theportraithouse15/">Instagram</a>
                     </div>
                 </div>
             </div>
@@ -371,6 +373,19 @@
             </div>
         </div>
     </footer>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="success-modal">
+        <div class="modal-content">
+            <div class="success-icon">
+                <span class="material-icons-outlined text-white text-3xl">check</span>
+            </div>
+            <h3 class="text-2xl font-display mb-2">Thank You!</h3>
+            <p class="text-stone-500 mb-6">Your inquiry has been sent successfully. We'll get back to you soon.</p>
+            <button onclick="closeSuccessModal()"
+                class="px-8 py-3 bg-stone-900 dark:bg-white text-white dark:text-black text-xs uppercase tracking-widest hover:bg-primary transition-colors">Close</button>
+        </div>
+    </div>
 
 </body>
 

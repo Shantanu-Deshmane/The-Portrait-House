@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="scroll-smooth" lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -19,7 +19,7 @@
         content="Discover the philosophy and artistry behind The Portrait House. We specialize in high-end monochrome portraiture that captures the raw, elegant character of our subjects." />
     <meta name="keywords"
         content="photography studio philosophy, monochrome mastery, Karad photography, portrait artists" />
-    <link rel="canonical" href="https://theportraithouse.com/AboutUs.html" />
+    <link rel="canonical" href="https://the-portrait-house.vercel.app/AboutUs.html" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -28,11 +28,14 @@
     <meta property="og:image" content="https://theportraithouse.com/images/img3.webp" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap"
+        rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&display=swap" rel="stylesheet" />
     <link rel="icon" type="image/png" href="images/logo.png" />
     <link rel="preload" as="image" href="images/img3.webp" />
     <link rel="stylesheet" href="output.css">
-    <script src="main.js"></script>
+    <script src="main.js" defer></script>
 
     <!-- Breadcrumb Schema -->
     <script type="application/ld+json">
@@ -176,12 +179,12 @@
                         is intentional, and every subject is treated with the reverence they deserve.
                     </p>
                 </div>
-                <div class="grid grid-cols-2 gap-8 pt-8">
-                    <div>
+                <div class="grid grid-cols-2 gap-8 pt-8 scroll-animate animate-fade-up delay-200">
+                    <div class="text-center md:text-left">
                         <span class="text-4xl font-display italic block mb-2">5+</span>
                         <span class="text-[10px] uppercase tracking-widest text-stone-500">Years of Artistry</span>
                     </div>
-                    <div>
+                    <div class="text-center md:text-left">
                         <span class="text-4xl font-display italic block mb-2">5k</span>
                         <span class="text-[10px] uppercase tracking-widest text-stone-500">Portraits Captured</span>
                     </div>
@@ -192,11 +195,11 @@
 
     <section class="py-32 px-8 md:px-24 max-w-7xl mx-auto relative overflow-hidden">
         <div class="grid md:grid-cols-2 gap-16 items-center">
-            <div class="z-10">
+            <div class="z-10 scroll-animate animate-fade-right">
                 <span class="text-primary tracking-[0.4em] uppercase text-xs font-semibold mb-6 block">Our Craft</span>
                 <h2 class="text-5xl md:text-7xl mb-12">The Monochrome <br />Mastery.</h2>
                 <div class="space-y-12">
-                    <div class="flex gap-6">
+                    <div class="flex gap-6 scroll-animate animate-fade-up delay-100">
                         <span class="text-stone-300 font-display text-2xl">01</span>
                         <div>
                             <h3 class="text-xl mb-4 font-medium">Perfect Lighting</h3>
@@ -204,7 +207,7 @@
                                 techniques to create depth and dimension.</p>
                         </div>
                     </div>
-                    <div class="flex gap-6">
+                    <div class="flex gap-6 scroll-animate animate-fade-up delay-200">
                         <span class="text-stone-300 font-display text-2xl">02</span>
                         <div>
                             <h3 class="text-xl mb-4 font-medium">Authentic Connection</h3>
@@ -212,7 +215,7 @@
                                 feel at ease and your true self shines through.</p>
                         </div>
                     </div>
-                    <div class="flex gap-6">
+                    <div class="flex gap-6 scroll-animate animate-fade-up delay-300">
                         <span class="text-stone-300 font-display text-2xl">03</span>
                         <div>
                             <h3 class="text-xl mb-4 font-medium">Fine Art Finish</h3>
@@ -222,15 +225,11 @@
                     </div>
                 </div>
             </div>
-            <div class="relative h-[600px] md:h-[800px]">
+            <div class="relative h-[600px] md:h-[800px] scroll-animate animate-scale-up">
                 <img alt="Premium monochrome portrait highlighting intimate facial textures"
                     class="w-full h-full object-cover grayscale lazy-img" src="images/img5.webp" loading="lazy"
                     decoding="async" width="4000" height="6000" />
             </div>
-        </div>
-        <div class="absolute right-0 bottom-0 opacity-5 pointer-events-none translate-x-1/4 translate-y-1/4">
-            <img alt="The Portrait House Decorative Bottom Logo" class="w-[800px] invert dark:invert-0"
-                src="images/logo.png" width="938" height="1001" />
         </div>
     </section>
 
@@ -272,9 +271,8 @@
                     <h4 class="text-[10px] uppercase tracking-[0.3em] font-bold mb-6 text-primary">Follow Information
                     </h4>
                     <div class="flex justify-center md:justify-start space-x-8 text-[10px] uppercase tracking-widest">
-                        <a class="hover:text-primary transition-colors"
-                            href="https://www.instagram.com/p/DTdOQCdiO8t/?igsh=MWRlemRrNDN2bm9kdw==">Instagram</a>
-                        <a class="hover:text-primary transition-colors" href="#">Pinterest</a>
+                        <a class="hover:text-primary transition-colors" rel="noopener noreferrer" target="_blank"
+                            href="https://www.instagram.com/theportraithouse15/">Instagram</a>
                     </div>
                 </div>
             </div>
