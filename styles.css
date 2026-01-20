@@ -407,3 +407,13 @@ footer .text-stone-500 {
         transform: rotate(360deg);
     }
 }
+
+/* Material Icons Loading Safety */
+.material-icons-outlined {
+    font-display: block;
+    overflow: hidden;
+    /* Optional: Ensure font-smoothing is clean */
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+}
