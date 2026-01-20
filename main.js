@@ -101,19 +101,36 @@ function initGallery() {
             // Get filter category from button text
             const filterText = btn.innerText.trim().toLowerCase();
             const items = document.querySelectorAll('.gallery-item');
+            const isAllWorks = filterText === 'all works';
 
-            items.forEach(item => {
+            // Show/hide load more button based on category
+            if (loadMoreBtn) {
+                if (isAllWorks) {
+                    // Reset to initial visibility for "All Works"
+                    currentVisibleItems = 9;
+                    loadMoreBtn.style.display = currentVisibleItems >= items.length ? 'none' : 'inline-block';
+                } else {
+                    // Hide load more for individual categories
+                    loadMoreBtn.style.display = 'none';
+                }
+            }
+
+            items.forEach((item, index) => {
                 const categorySpan = item.querySelector('.overlay span');
                 const category = categorySpan ? categorySpan.innerText.trim().toLowerCase() : '';
 
                 // Check if should show this item
-                const shouldShow = filterText === 'all works' ||
-                    category.includes(filterText) ||
-                    filterText.includes(category);
+                const shouldShow = isAllWorks || category === filterText;
 
                 if (shouldShow) {
-                    item.style.display = 'block';
-                    setTimeout(() => { item.style.opacity = '1'; }, 50);
+                    // For "All Works", respect pagination; for categories, show all
+                    if (isAllWorks && index >= currentVisibleItems) {
+                        item.style.display = 'none';
+                        item.style.opacity = '0';
+                    } else {
+                        item.style.display = 'block';
+                        setTimeout(() => { item.style.opacity = '1'; }, 50);
+                    }
                 } else {
                     item.style.opacity = '0';
                     setTimeout(() => { item.style.display = 'none'; }, 300);
@@ -122,6 +139,9 @@ function initGallery() {
         });
     });
 }
+
+
+
 
 // Form Validation and WhatsApp Handling
 function validateEmail(email) {
