@@ -5,6 +5,8 @@
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <title>The Portrait House | Luxury Photography Studio</title>
+
+  <!-- FOUC Prevention: Apply theme before React renders -->
   <script>
     (function () {
       const theme = localStorage.getItem('theme');
@@ -15,19 +17,20 @@
       }
     })();
   </script>
+
   <meta name="description"
     content="The Portrait House is a luxury photography studio in Karad, Maharashtra, specializing in high-end monochrome portraiture and timeless visual narratives." />
   <meta name="keywords"
     content="photography, portrait studio, Karad, Maharashtra, monochrome portraiture, luxury photography, The Portrait House" />
   <link rel="canonical" href="https://the-portrait-house.vercel.app/" />
 
-  <!-- Open Graph / Facebook -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://theportraithouse.com/" />
   <meta property="og:title" content="The Portrait House | Luxury Photography Studio" />
   <meta property="og:description"
     content="Capturing the timeless soul through sophisticated light and shadow. Luxury photography studio in Karad, Maharashtra." />
-  <meta property="og:image" content="https://theportraithouse.com/images/img1.webp" />
+  <meta property="og:image" content="https://theportraithouse.com/assets/engagement/img1.webp" />
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
@@ -35,34 +38,31 @@
   <meta property="twitter:title" content="The Portrait House | Luxury Photography Studio" />
   <meta property="twitter:description"
     content="Capturing the timeless soul through sophisticated light and shadow. Luxury photography studio in Karad, Maharashtra." />
-  <meta property="twitter:image" content="https://theportraithouse.com/images/img1.webp" />
+  <meta property="twitter:image" content="https://theportraithouse.com/assets/engagement/img1.webp" />
 
+  <!-- Fonts: preconnect + display=swap prevents render-blocking FOIT -->
   <link href="https://fonts.googleapis.com" rel="preconnect" />
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <!-- dns-prefetch as fallback for older browsers -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap"
-    rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&display=block" rel="stylesheet" />
-  <link rel="icon" type="image/png" href="images/logo.png" />
-  <link rel="preload" as="image" href="images/img1.webp" />
-  <link rel="preload" as="font" type="font/woff2"
-    href="https://fonts.gstatic.com/s/playfairdisplay/v30/nuFiD-vYSZviVYUb_rj3ij__anPXDTzYgA.woff2" crossorigin />
-  <link rel="stylesheet" href="output.css">
-  <script src="main.js" defer></script>
+    rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap"
+      rel="stylesheet" />
+  </noscript>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&display=block" rel="stylesheet"
+    media="print" onload="this.media='all'" />
+  <noscript>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&display=block" rel="stylesheet" />
+  </noscript>
 
-  <!-- Breadcrumb Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [{
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://theportraithouse.com/"
-    }]
-  }
-  </script>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/assets/logo.png" />
+
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
@@ -70,8 +70,7 @@
     "@context": "https://schema.org",
     "@type": "PhotographyStore",
     "name": "The Portrait House",
-    "image": "https://theportraithouse.com/images/logo.png",
-    "@id": "",
+    "image": "https://theportraithouse.com/assets/logo.png",
     "url": "https://theportraithouse.com/",
     "telephone": "+91 95112 36233",
     "address": {
@@ -99,350 +98,9 @@
   </script>
 </head>
 
-<body
-  class="bg-background-light dark:bg-background-dark text-stone-900 dark:text-stone-100 font-sans transition-colors duration-300">
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-  <nav
-    class="fixed top-0 w-full z-50 bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-stone-200 dark:border-stone-800"
-    role="navigation" aria-label="Main navigation">
-    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-      <a href="index.html" class="flex items-center">
-        <img alt="The Portrait House Logo" class="h-12 w-auto invert dark:invert-0" src="images/logo.png" width="938"
-          height="1001" />
-      </a>
-      <div class="hidden md:flex space-x-10 text-xs tracking-[0.2em] uppercase font-medium nav-links">
-        <a class="hover:text-primary transition-colors nav-link-active" href="index.html" data-page="index">Home</a>
-        <a class="hover:text-primary transition-colors" href="Gallery.html" data-page="Gallery">Gallery</a>
-        <a class="hover:text-primary transition-colors" href="AboutUs.html" data-page="AboutUs">About Us</a>
-        <a class="hover:text-primary transition-colors" href="ContactUs.html" data-page="ContactUs">Contact</a>
-      </div>
-      <div class="flex items-center space-x-6 hover-effect">
-        <button class="p-2 hover:bg-stone-100 dark:hover:bg-stone-900 rounded-full transition-colors theme-toggle-btn"
-          id="mode-toggle" aria-label="Toggle dark mode">
-          <span class="material-icons-outlined">dark_mode</span>
-        </button>
-        <button class="md:hidden p-2 text-stone-800 dark:text-stone-200" id="mobile-menu-btn" aria-label="Open menu">
-          <span class="material-icons-outlined text-2xl">menu</span>
-        </button>
-        <a class="hidden md:block border border-stone-900 dark:border-white px-8 py-3 text-[10px] tracking-[0.2em] uppercase hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all"
-          href="Gallery.html">
-          View Portfolio
-        </a>
-      </div>
-    </div>
-  </nav>
-
-  <div id="mobile-menu"
-    class="fixed inset-0 h-screen w-screen bg-white/95 dark:bg-black/98 backdrop-blur-xl z-[100] translate-x-full transition-transform duration-500 md:hidden mobile-nav-watermark overflow-hidden">
-    <div class="p-6 flex justify-between items-center border-b border-stone-200/50 dark:border-stone-800/50">
-      <a href="index.html">
-        <img alt="The Portrait House Logo" class="h-8 w-auto invert dark:invert-0" src="images/logo.png" width="938"
-          height="1001" />
-      </a>
-      <button id="close-menu-btn" class="p-2 text-stone-800 dark:text-stone-200" aria-label="Close menu">
-        <span class="material-icons-outlined text-3xl">close</span>
-      </button>
-    </div>
-    <div
-      class="flex flex-col items-center justify-center space-y-10 h-[75vh] text-lg tracking-[0.4em] uppercase font-light mobile-nav-links">
-      <a class="hover:text-primary transition-colors mobile-link relative group" href="index.html" data-page="index">
-        Home
-        <span
-          class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-px bg-primary transition-all group-hover:w-full"></span>
-      </a>
-      <a class="hover:text-primary transition-colors mobile-link relative group" href="Gallery.html"
-        data-page="Gallery">
-        Gallery
-        <span
-          class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-px bg-primary transition-all group-hover:w-full"></span>
-      </a>
-      <a class="hover:text-primary transition-colors mobile-link relative group" href="AboutUs.html"
-        data-page="AboutUs">
-        About Us
-        <span
-          class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-px bg-primary transition-all group-hover:w-full"></span>
-      </a>
-      <a class="hover:text-primary transition-colors mobile-link relative group" href="ContactUs.html"
-        data-page="ContactUs">
-        Contact
-        <span
-          class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-px bg-primary transition-all group-hover:w-full"></span>
-      </a>
-      <a class="mt-12 border border-stone-800/30 dark:border-stone-200/30 px-12 py-5 text-xs tracking-[0.3em] uppercase hover:bg-stone-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-all"
-        href="ContactUs.html">Book a Session</a>
-    </div>
-  </div>
-  <main id="main-content">
-    <section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
-      <img alt="Luxury B&amp;W Portrait" class="absolute inset-0 w-full h-full object-cover grayscale brightness-75"
-        src="images/img1.webp" decoding="async" width="4000" height="6000" fetchpriority="high" />
-      <div class="absolute inset-0 hero-gradient"></div>
-      <div class="relative z-10 text-center px-6">
-        <h1 class="font-display text-5xl md:text-8xl text-white mb-6 italic">The Art of Essence</h1>
-        <p
-          class="text-stone-300 tracking-[0.3em] uppercase text-xs md:text-sm font-light max-w-lg mx-auto leading-loose">
-          Capturing the timeless soul through sophisticated light and shadow.
-        </p>
-        <div class="mt-12">
-          <a class="inline-block border border-white text-white px-10 py-4 text-xs tracking-[0.2em] uppercase hover:bg-white hover:text-black transition-all"
-            href="#gallery">
-            View the Collection
-          </a>
-        </div>
-      </div>
-      <div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-white animate-bounce">
-        <span class="material-icons-outlined">expand_more</span>
-      </div>
-    </section>
-    <section class="py-24 px-6 bg-white dark:bg-zinc-950" id="about">
-      <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-        <div class="space-y-8 scroll-animate animate-fade-right">
-          <span class="text-primary tracking-[0.4em] uppercase text-xs font-semibold">Our Signature Style</span>
-          <h2 class="font-display text-4xl md:text-6xl leading-tight dark:text-white">Where tradition meets modern <span
-              class="italic font-normal">refinement.</span></h2>
-          <p class="text-stone-600 dark:text-stone-400 leading-relaxed text-lg max-w-md">
-            We believe every face tells a story. At The Portrait House, we specialize in high-end monochrome portraiture
-            that strips away the distractions of color to reveal the raw, elegant character of our subjects.
-          </p>
-          <div class="pt-4">
-            <a class="text-sm border-b border-stone-900 dark:border-stone-100 pb-1 tracking-widest uppercase hover:text-primary hover:border-primary transition-all"
-              href="AboutUs.html">Learn more about us</a>
-          </div>
-        </div>
-        <div class="relative group overflow-hidden scroll-animate animate-scale-up">
-          <img alt="Signature Portrait"
-            class="w-full grayscale brightness-90 group-hover:scale-105 transition-transform duration-700 lazy-img"
-            src="images/img2.webp" loading="lazy" decoding="async" width="4000" height="6000" />
-          <div class="absolute inset-0 border-[20px] border-white/10 pointer-events-none"></div>
-        </div>
-      </div>
-    </section>
-    <section class="py-24 px-6 bg-stone-50 dark:bg-black" id="gallery">
-      <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-20 scroll-animate animate-fade-up">
-          <h2 class="font-display text-4xl md:text-5xl dark:text-white mb-4 italic">Featured Gallery</h2>
-          <div class="w-16 h-px bg-primary mx-auto"></div>
-        </div>
-        <div class="masonry">
-          <!-- WEDDING - UPDATED -->
-          <div class="masonry-item overflow-hidden bg-stone-200 dark:bg-stone-900">
-            <img alt="The Eternal Union"
-              class="w-full grayscale hover:grayscale-0 transition-all duration-700 ease-in-out cursor-pointer lazy-img transform hover:scale-105"
-              src="Image/wedding/02.webp" loading="lazy" decoding="async" width="4000" height="6000" />
-          </div>
-          <!-- PRE-WEDDING - UPDATED -->
-          <div class="masonry-item overflow-hidden bg-stone-200 dark:bg-stone-900">
-            <img alt="Urban Love Story"
-              class="w-full grayscale hover:grayscale-0 transition-all duration-700 ease-in-out cursor-pointer lazy-img transform hover:scale-105"
-              src="Image/preWedding/(3).webp" loading="lazy" decoding="async" width="3681" height="5522" />
-          </div>
-          <!-- BRIDE - UPDATED -->
-          <div class="masonry-item overflow-hidden bg-stone-200 dark:bg-stone-900">
-            <img alt="Bridal Radiance"
-              class="w-full grayscale hover:grayscale-0 transition-all duration-700 ease-in-out cursor-pointer lazy-img transform hover:scale-105"
-              src="Image/bride/(2).webp" loading="lazy" decoding="async" width="4000" height="6000" />
-          </div>
-          <!-- OUTDOOR - UPDATED -->
-          <div class="masonry-item overflow-hidden bg-stone-200 dark:bg-stone-900">
-            <img alt="Golden Hour Serenity"
-              class="w-full grayscale hover:grayscale-0 transition-all duration-700 ease-in-out cursor-pointer lazy-img transform hover:scale-105"
-              src="Image/Outdoor/2.webp" loading="lazy" decoding="async" width="4000" height="6000" />
-          </div>
-          <!-- ENGAGEMENT - UPDATED -->
-          <div class="masonry-item overflow-hidden bg-stone-200 dark:bg-stone-900">
-            <img alt="Signature Monochrome"
-              class="w-full grayscale hover:grayscale-0 transition-all duration-700 ease-in-out cursor-pointer lazy-img transform hover:scale-105"
-              src="images/img5.webp" loading="lazy" decoding="async" width="3681" height="5522" />
-          </div>
-          <!-- BRIDE 3 - REPOSITIONED -->
-          <div class="masonry-item overflow-hidden bg-stone-200 dark:bg-stone-900">
-            <img alt="Captivating Soul"
-              class="w-full grayscale hover:grayscale-0 transition-all duration-700 ease-in-out cursor-pointer lazy-img transform hover:scale-105"
-              src="Image/bride/(7).webp" loading="lazy" decoding="async" width="4000" height="6000" />
-          </div>
-          <!-- CINEMATOGRAPHY - UPDATED -->
-          <div class="masonry-item overflow-hidden bg-stone-200 dark:bg-stone-900">
-            <img alt="Cinematic Narrative"
-              class="w-full grayscale hover:grayscale-0 transition-all duration-700 ease-in-out cursor-pointer lazy-img transform hover:scale-105"
-              src="images/img4.webp" loading="lazy" decoding="async" width="4000" height="6000" />
-          </div>
-          <!-- BRIDE 2 - UPDATED -->
-          <div class="masonry-item overflow-hidden bg-stone-200 dark:bg-stone-900">
-            <img alt="Elegance in Detail"
-              class="w-full grayscale hover:grayscale-0 transition-all duration-700 ease-in-out cursor-pointer lazy-img transform hover:scale-105"
-              src="Image/bride/(5).webp" loading="lazy" decoding="async" width="4000" height="6000" />
-          </div>
-          <!-- OUTDOOR 2 - UPDATED -->
-          <div class="masonry-item overflow-hidden bg-stone-200 dark:bg-stone-900">
-            <img alt="Rural Landscapes"
-              class="w-full grayscale hover:grayscale-0 transition-all duration-700 ease-in-out cursor-pointer lazy-img transform hover:scale-105"
-              src="Image/Outdoor/5.webp" loading="lazy" decoding="async" width="4000" height="6000" />
-          </div>
-        </div>
-        <div class="mt-16 text-center">
-          <a href="Gallery.html"
-            class="inline-block px-12 py-4 border border-stone-800 dark:border-stone-200 text-[10px] tracking-[0.3em] uppercase hover:bg-stone-900 hover:text-white dark:hover:bg-stone-100 dark:hover:text-black transition-all">
-            Explore Full Portfolio
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Client Reviews Section -->
-    <section class="py-24 px-6 bg-white dark:bg-zinc-950" id="reviews">
-      <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-16 scroll-animate animate-fade-up">
-          <span class="text-primary tracking-[0.4em] uppercase text-xs font-semibold">Testimonials</span>
-          <h2 class="font-display text-4xl md:text-5xl dark:text-white mt-4 mb-4 italic">What Our Clients Say</h2>
-          <div class="w-16 h-px bg-primary mx-auto"></div>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div
-            class="bg-stone-50 dark:bg-stone-900/50 p-8 relative group hover:shadow-lg transition-shadow scroll-animate animate-fade-up delay-100">
-            <span class="material-icons-outlined text-4xl text-primary/30 absolute top-4 left-4">format_quote</span>
-            <div class="pt-8">
-              <p class="text-stone-600 dark:text-stone-300 leading-relaxed italic mb-6">
-                "The Portrait House captured our wedding day beautifully. Every photo tells a story. We couldn't be
-                happier with the results!"
-              </p>
-              <div class="flex items-center gap-4">
-                <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
-                  <span class="text-primary font-display text-xl">P</span>
-                </div>
-                <div>
-                  <h4 class="font-medium">Priya & Rahul</h4>
-                  <span class="text-[10px] uppercase tracking-widest text-stone-400">Wedding</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="bg-stone-50 dark:bg-stone-900/50 p-8 relative group hover:shadow-lg transition-shadow scroll-animate animate-fade-up delay-200">
-            <span class="material-icons-outlined text-4xl text-primary/30 absolute top-4 left-4">format_quote</span>
-            <div class="pt-8">
-              <p class="text-stone-600 dark:text-stone-300 leading-relaxed italic mb-6">
-                "Our pre-wedding shoot was incredible. The team made us feel so comfortable, and the photos exceeded all
-                expectations!"
-              </p>
-              <div class="flex items-center gap-4">
-                <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
-                  <span class="text-primary font-display text-xl">A</span>
-                </div>
-                <div>
-                  <h4 class="font-medium">Aishwarya Patil</h4>
-                  <span class="text-[10px] uppercase tracking-widest text-stone-400">Pre-Wedding</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="bg-stone-50 dark:bg-stone-900/50 p-8 relative group hover:shadow-lg transition-shadow scroll-animate animate-fade-up delay-300">
-            <span class="material-icons-outlined text-4xl text-primary/30 absolute top-4 left-4">format_quote</span>
-            <div class="pt-8">
-              <p class="text-stone-600 dark:text-stone-300 leading-relaxed italic mb-6">
-                "Professional, creative, and truly passionate. The outdoor locations they suggested were perfect. Highly
-                recommend!"
-              </p>
-              <div class="flex items-center gap-4">
-                <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
-                  <span class="text-primary font-display text-xl">S</span>
-                </div>
-                <div>
-                  <h4 class="font-medium">Sandeep Kulkarni</h4>
-                  <span class="text-[10px] uppercase tracking-widest text-stone-400">Outdoor</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="py-32 px-6 bg-white dark:bg-background-dark border-t border-stone-100 dark:border-stone-900"
-      id="contact">
-      <div class="max-w-4xl mx-auto text-center">
-        <h2 class="font-display text-4xl md:text-6xl mb-12 dark:text-white">Start your legacy.</h2>
-        <form id="contact-form" class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-          <div class="space-y-2">
-            <label class="text-[10px] tracking-widest uppercase font-semibold text-stone-500">Name</label>
-            <input id="name" required
-              class="w-full bg-transparent border-0 border-b border-stone-300 dark:border-stone-700 focus:ring-0 focus:border-primary px-0 py-3 dark:text-white"
-              placeholder="Kedar Kumbhar" type="text" />
-          </div>
-          <div class="space-y-2">
-            <label class="text-[10px] tracking-widest uppercase font-semibold text-stone-500">Email Address</label>
-            <input id="email" required
-              class="w-full bg-transparent border-0 border-b border-stone-300 dark:border-stone-700 focus:ring-0 focus:border-primary px-0 py-3 dark:text-white"
-              type="email" />
-          </div>
-          <div class="md:col-span-2 space-y-2 pt-4">
-            <label class="text-[10px] tracking-widest uppercase font-semibold text-stone-500">Inquiry Details</label>
-            <textarea id="message" required
-              class="w-full bg-transparent border-0 border-b border-stone-300 dark:border-stone-700 focus:ring-0 focus:border-primary px-0 py-3 dark:text-white"
-              rows="3"></textarea>
-          </div>
-          <div class="md:col-span-2 text-center pt-8">
-            <button
-              class="bg-stone-900 dark:bg-white text-white dark:text-black px-16 py-5 text-xs tracking-[0.3em] uppercase hover:bg-primary dark:hover:bg-primary transition-colors"
-              type="submit">
-              Send Inquiry
-            </button>
-          </div>
-        </form>
-      </div>
-    </section>
-    <footer class="bg-stone-100 dark:bg-black py-20 px-6 border-t border-stone-200 dark:border-stone-900">
-      <div class="max-w-7xl mx-auto flex flex-col items-center">
-        <a href="index.html" class="mb-12">
-          <img alt="The Portrait House Logo" class="h-20 w-auto invert dark:invert-0 opacity-50" src="images/logo.png"
-            width="938" height="1001" />
-        </a>
-        <div
-          class="grid grid-cols-1 md:grid-cols-3 gap-12 w-full text-center md:text-left border-b border-stone-200 dark:border-stone-800 pb-16">
-          <div>
-            <h4 class="text-[10px] uppercase tracking-[0.3em] font-bold mb-6 text-primary">The Studio</h4>
-            <p class="text-sm text-stone-600 dark:text-stone-400 font-light leading-relaxed">
-              A/p Karad, Tal-Karad,<br />
-              Dist-Satara, Maharashtra, 415110
-            </p>
-          </div>
-          <div>
-            <h4 class="text-[10px] uppercase tracking-[0.3em] font-bold mb-6 text-primary">Contact</h4>
-            <p class="text-sm text-stone-600 dark:text-stone-400 font-light leading-relaxed">
-              +91 95112 36233<br />
-              theportraithouse15@gmail.com
-            </p>
-          </div>
-          <div>
-            <h4 class="text-[10px] uppercase tracking-[0.3em] font-bold mb-6 text-primary">Follow Information</h4>
-            <div class="flex justify-center md:justify-start space-x-8 text-[10px] uppercase tracking-widest">
-              <a class="hover:text-primary transition-colors" rel="noopener noreferrer" target="_blank"
-                href="https://www.instagram.com/theportraithouse15/">Instagram</a>
-            </div>
-          </div>
-        </div>
-        <div class="mt-12 text-[10px] tracking-[0.2em] text-stone-500 uppercase flex flex-col items-center space-y-2">
-          <p>© <span class="current-year">2026</span> THE PORTRAIT HOUSE. ALL RIGHTS RESERVED.</p>
-          <p class="opacity-50">DEVELOPED BY <a href="https://chaartech.in" target="_blank" rel="noopener noreferrer"
-              class="hover:text-primary transition-colors">CHAARTECH TECHNOLOGIES PVT. LTD</a></p>
-        </div>
-      </div>
-    </footer>
-  </main>
-
-  <!-- Success Modal -->
-  <div id="success-modal" class="success-modal">
-    <div class="modal-content">
-      <div class="success-icon">
-        <span class="material-icons-outlined text-white text-3xl">check</span>
-      </div>
-      <h3 class="text-2xl font-display mb-2">Thank You!</h3>
-      <p class="text-stone-500 mb-6">Your inquiry has been sent successfully. We'll get back to you soon.</p>
-      <button onclick="closeSuccessModal()"
-        class="px-8 py-3 bg-stone-900 dark:bg-white text-white dark:text-black text-xs uppercase tracking-widest hover:bg-primary transition-colors">Close</button>
-    </div>
-  </div>
-
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
 </body>
 
 </html>

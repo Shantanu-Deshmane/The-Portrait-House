@@ -1,9 +1,15 @@
 {
-    "version": 2,
-    "outputDirectory": ".",
+    "buildCommand": "npm run build",
+    "outputDirectory": "dist",
+    "rewrites": [
+        {
+            "source": "/(.*)",
+            "destination": "/index.html"
+        }
+    ],
     "headers": [
         {
-            "source": "/images/(.*)",
+            "source": "/assets/(.*)",
             "headers": [
                 {
                     "key": "Cache-Control",
@@ -12,55 +18,41 @@
             ]
         },
         {
-            "source": "/(.*).html",
+            "source": "/(.*)\\.js",
             "headers": [
                 {
                     "key": "Cache-Control",
-                    "value": "public, max-age=0, must-revalidate"
-                },
+                    "value": "public, max-age=31536000, immutable"
+                }
+            ]
+        },
+        {
+            "source": "/(.*)\\.css",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "public, max-age=31536000, immutable"
+                }
+            ]
+        },
+        {
+            "source": "/(.*)",
+            "headers": [
                 {
                     "key": "X-Content-Type-Options",
                     "value": "nosniff"
                 },
                 {
                     "key": "X-Frame-Options",
-                    "value": "SAMEORIGIN"
-                }
-            ]
-        },
-        {
-            "source": "/sitemap.xml",
-            "headers": [
+                    "value": "DENY"
+                },
                 {
-                    "key": "Cache-Control",
-                    "value": "public, max-age=86400"
-                }
-            ]
-        },
-        {
-            "source": "/robots.txt",
-            "headers": [
+                    "key": "X-XSS-Protection",
+                    "value": "1; mode=block"
+                },
                 {
-                    "key": "Cache-Control",
-                    "value": "public, max-age=86400"
-                }
-            ]
-        },
-        {
-            "source": "/output.css",
-            "headers": [
-                {
-                    "key": "Cache-Control",
-                    "value": "public, max-age=31536000, immutable"
-                }
-            ]
-        },
-        {
-            "source": "/main.js",
-            "headers": [
-                {
-                    "key": "Cache-Control",
-                    "value": "public, max-age=31536000, immutable"
+                    "key": "Referrer-Policy",
+                    "value": "strict-origin-when-cross-origin"
                 }
             ]
         }
