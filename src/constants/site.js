@@ -10,7 +10,7 @@ export const STUDIO = {
         line1: 'A/p Karad, Tal-Karad,',
         line2: 'Dist-Satara, Maharashtra, 415110',
     },
-    instagram: 'https://www.instagram.com/theportraithouse_?igsh=a3Rjbm5uMnhkazB2',
+    instagram: 'https://instagram.com/theportraithouse_',
     mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Karad+Maharashtra+415110',
     hours: {
         weekdays: 'Tuesday – Saturday: 10:00 AM – 6:00 PM',
