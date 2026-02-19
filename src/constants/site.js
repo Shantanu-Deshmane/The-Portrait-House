@@ -17,7 +17,7 @@ export const STUDIO = {
         weekend: 'Sunday & Monday: By Appointment Only',
     },
     developer: {
-        name: 'ChaarTech Technologies Pvt. Ltd',
+        name: 'ChaarTech Technologies',
         url: 'https://chaartech.in',
     },
 };
